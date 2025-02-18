@@ -1,0 +1,8 @@
+{
+  "name": "ember-vite-codemod",
+  "version": "0.0.0",
+  "description": "",
+  "bin": "index.js",
+  "scripts": {
+  }
+}
