@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import addMissingFiles from './lib/addMissingFiles.js';
+import moveIndex from './lib/moveIndex.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
@@ -35,5 +36,6 @@ program.parse();
 
 // await ensureV2Addons();
 await addMissingFiles();
+await moveIndex();
 // TODO
 // await updatePackageJson();
