@@ -4,5 +4,29 @@
   "description": "",
   "bin": "index.js",
   "scripts": {
+    "format": "prettier . --cache --write",
+    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
+    "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\" --prefixColors auto && npm run format",
+    "lint:format": "prettier . --cache --check",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@embroider/app-blueprint": "^0.23.0",
+    "commander": "^13.1.0"
+  },
+  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af",
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.1"
   }
 }
