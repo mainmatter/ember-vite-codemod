@@ -4,6 +4,9 @@ import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import addMissingFiles from './lib/addMissingFiles.js';
+import ensureV2Addons from './lib/ensureV2Addons.js'
+import moveIndex from './lib/moveIndex.js';
+import modifyFiles from './lib/modifyFiles.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
@@ -12,28 +15,11 @@ program.option('--skip-v2-addon').version(pkg.version);
 
 program.parse();
 
-// const options = program.opts();
+const options = program.opts();
 
-// TODO - psuedo code
-// function ensureV2Addons() {
-//   const allAddons = getAllAddons();
-//   const allV1Addons = allAddons.filter(a => a.version === 1);
-
-//   for( let addon of allV1Addons) {
-//     if(getLatestVersion(addon).version === 2) {
-//       console.log(`You can update ${addon.name} because its latest version is a v2 and that will help you very much.`)
-
-//       if(!options.skipV2Addon) {
-//         console.log('Sometimes Embroider can auto-fix your addons, but it\'s usually better to upgrade. If you want to skip ahead and try without upgrading pass --skip-v2-addon-check')
-//         process.exit(1);
-//       } else {
-//         console.log('I hope you know what you\'re doing 🙈');
-//       }
-//     }
-//   }
-// }
-
-// await ensureV2Addons();
+await ensureV2Addons(options.skipV2Addon);
 await addMissingFiles();
+await moveIndex();
+await modifyFiles();
 // TODO
 // await updatePackageJson();
