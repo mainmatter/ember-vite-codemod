@@ -16,8 +16,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
 
 program
-  .option('--skip-v2-addon', 'pursue the execution even when an upgradable v1 addon is detected', false)
+  .option(
+    '--skip-v2-addon',
+    'pursue the execution even when an upgradable v1 addon is detected',
+    false,
+  )
   .option('--ts', 'indicate the app to migrate uses TypeScript', false)
+  .option('--error-trace', 'print the whole error trace when available', false)
   .version(pkg.version);
 
 program.parse();
@@ -26,11 +31,20 @@ const options = program.opts();
 const projectType = options.ts ? 'ts' : 'js';
 
 // Tasks order is important
+console.log('Checking for unsupported dependencies...\n');
 await ensureNoUnsupportedDeps();
-await ensureV2Addons(options.skipV2Addon);
+
+if (!options.skipV2Addon) {
+  console.log('\nChecking addons are v2...\n');
+  await ensureV2Addons();
+}
+
+console.log('\nCreating new required files...\n');
 await addMissingFiles({ projectType });
 await moveIndex();
-await transformFiles();
+
+console.log('\nRunning code replacements...\n');
+await transformFiles(options.errorTrace);
 await updatePackageJson();
 
-console.log('All set! Re-install the app dependencies then run your linter');
+console.log('\nAll set! Re-install the app dependencies then run your linter');

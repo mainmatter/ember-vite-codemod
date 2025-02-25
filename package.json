@@ -25,7 +25,6 @@
     "commander": "^13.1.0"
   },
   "devDependencies": {
-    "@codemod/cli": "^3.3.0",
     "@eslint/js": "^9.20.0",
     "concurrently": "^9.1.2",
     "eslint": "^9.20.1",
