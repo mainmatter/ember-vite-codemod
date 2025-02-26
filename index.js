@@ -3,37 +3,48 @@ import { program } from 'commander';
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import addMissingFiles from './lib/addMissingFiles.js';
+import addMissingFiles from './lib/tasks/add-missing-files.js';
+import ensureNoUnsupportedDeps from './lib/tasks/ensure-no-unsupported-deps.js';
+import ensureV2Addons from './lib/tasks/ensure-v2-addons.js';
+import moveIndex from './lib/tasks/move-index.js';
+import transformFiles from './lib/tasks/transform-files.js';
+import updatePackageJson from './lib/tasks/update-package-json.js';
+
+// Continue if git is clean
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
 
-program.option('--skip-v2-addon').version(pkg.version);
+program
+  .option(
+    '--skip-v2-addon',
+    'pursue the execution even when an upgradable v1 addon is detected',
+    false,
+  )
+  .option('--ts', 'indicate the app to migrate uses TypeScript', false)
+  .option('--error-trace', 'print the whole error trace when available', false)
+  .version(pkg.version);
 
 program.parse();
 
-// const options = program.opts();
+const options = program.opts();
+const projectType = options.ts ? 'ts' : 'js';
 
-// TODO - psuedo code
-// function ensureV2Addons() {
-//   const allAddons = getAllAddons();
-//   const allV1Addons = allAddons.filter(a => a.version === 1);
+// Tasks order is important
+console.log('Checking for unsupported dependencies...\n');
+await ensureNoUnsupportedDeps();
 
-//   for( let addon of allV1Addons) {
-//     if(getLatestVersion(addon).version === 2) {
-//       console.log(`You can update ${addon.name} because its latest version is a v2 and that will help you very much.`)
+if (!options.skipV2Addon) {
+  console.log('\nChecking addons are v2...\n');
+  await ensureV2Addons();
+}
 
-//       if(!options.skipV2Addon) {
-//         console.log('Sometimes Embroider can auto-fix your addons, but it\'s usually better to upgrade. If you want to skip ahead and try without upgrading pass --skip-v2-addon-check')
-//         process.exit(1);
-//       } else {
-//         console.log('I hope you know what you\'re doing 🙈');
-//       }
-//     }
-//   }
-// }
+console.log('\nCreating new required files...\n');
+await addMissingFiles({ projectType });
+await moveIndex();
 
-// await ensureV2Addons();
-await addMissingFiles();
-// TODO
-// await updatePackageJson();
+console.log('\nRunning code replacements...\n');
+await transformFiles(options.errorTrace);
+await updatePackageJson();
+
+console.log('\nAll set! Re-install the app dependencies then run your linter');
