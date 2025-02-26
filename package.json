@@ -18,7 +18,7 @@
     "lint:format": "prettier . --cache --check",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "dependencies": {
     "@embroider/app-blueprint": "^0.23.0",
@@ -27,12 +27,30 @@
   "devDependencies": {
     "@eslint/js": "^9.20.0",
     "concurrently": "^9.1.2",
+    "ember-cli-3.28": "npm:ember-cli@~3.28.0",
+    "ember-cli-4.12": "npm:ember-cli@~4.12.0",
+    "ember-cli-4.4": "npm:ember-cli@~4.4.0",
+    "ember-cli-4.8": "npm:ember-cli@~4.8.0",
+    "ember-cli-5.12": "npm:ember-cli@~5.12.0",
+    "ember-cli-5.4": "npm:ember-cli@~5.4.0",
+    "ember-cli-5.8": "npm:ember-cli@~5.8.0",
+    "ember-cli-latest": "npm:ember-cli@latest",
     "eslint": "^9.20.1",
     "eslint-config-prettier": "^10.0.1",
+    "execa": "^9.5.2",
     "globals": "^15.15.0",
+    "package-up": "^5.0.0",
     "prettier": "^3.5.1",
     "recast": "^0.23.9",
-    "release-plan": "^0.13.1"
+    "release-plan": "^0.13.1",
+    "tmp": "^0.2.3",
+    "vitest": "^3.0.7"
   },
-  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af"
+  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "core-js",
+      "esbuild"
+    ]
+  }
 }
