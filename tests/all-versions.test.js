@@ -61,7 +61,7 @@ describe('Test on all Ember versions', function () {
         stdio: 'inherit',
       })`${updateScriptPath} --skip-v2-addon`;
 
-      await execa({ cwd, stdio: 'inherit' })`pnpm i`;
+      await execa({ cwd, stdio: 'inherit' })`pnpm i --no-frozen-lockfile`;
 
       await execa({ cwd, stdio: 'inherit' })`./node_modules/.bin/vite build`;
       let result = await execa({ cwd })`${cliPath} test`;
