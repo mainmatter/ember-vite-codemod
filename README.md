@@ -4,7 +4,7 @@ Migrate your Ember app to build with Vite.
 
 ## Usage
 
-This codemod will add, move and modify files in your Ember app to make it build with Vite. Make sure your git repository is clean.
+This codemod will add, move and modify files in your Ember app to make it build with Vite. Make sure your git repository is clean before running this command so you can easily compare the changes.
 
 In your Ember app folder, execute:
 
@@ -29,7 +29,7 @@ The codemod executes a sequence of several ordered tasks. At the end of the proc
 
 This is a verification task, it doesn't change your code.
 
-The codemod will first check there are no known dependency that is incompatible with the way Vite works. `ember-fetch` needs to go.
+The codemod will first check there are no known dependency that is incompatible with the way Vite works. e.g. `ember-fetch` will not work with Vite and needs to be removed.
 
 ### Checking addons are v2
 
@@ -37,12 +37,12 @@ This is a verification task, it doesn't change your code.
 
 The codemod will look at all your Ember dependencies and will advise you for updates.
 
-When you use Embroider in an app that depends on v1 addons, Embroider will try to auto-fix the v1 addons a way that make them compatible with Vite. This approach works for a number of known addons, but we cannot guarantee it will work for any v1 addon you use. The best way to avoid issues is that your classic app already relies only on v2 addons, and the codemod will guide you in that direction:
+When you use Embroider in an app that depends on v1 addons, Embroider will try to auto-fix the v1 addons in a way that makes them compatible with Vite. This approach works for a number of known addons, but we cannot guarantee it will work for any v1 addon you use. The best way to avoid issues is that your classic app already relies only on v2 addons, and the codemod will guide you in that direction:
 
 - If one of your addons is v1 but the latest version on npm is v2, it's recommended to update.
 - If one of your addons is v1 and no v2 format is available, it's recommended to look for a different alternative or make the addon v2.
 - If one of your v1 addons but is known as being correctly rewriten by Embroider, the codemod won't notice you about it.
-- If one of your v1 addons comes from Ember app blueprint and is no longer used in Embroider+Vite world, the codemod won't notice you about it.
+- If one of your v1 addons comes from Ember app blueprint and is no longer used in Embroider+Vite world, the codemod won't notify you about it (because it will be removed in a later step).
 
 ### Creating new required files
 
@@ -54,9 +54,9 @@ First, it creates new files that are now required for Embroider+Vite. These file
 - [vite.config.mjs](https://github.com/embroider-build/app-blueprint/blob/main/files-override/shared/vite.config.mjs)
 - [babel.config.cjs](https://github.com/embroider-build/app-blueprint/blob/main/files/js/babel.config.cjs)
 
-### Moving `index.html` at the root
+### Moving `index.html` to the root
 
-Vite expects the `index.html` to be at the root of the app. The codemod will move your existing `app/index.html` at the root rather than creating a new file, this way it keeps all the customizations you added.
+Vite expects the `index.html` to be at the root of the app. The codemod will move your existing `app/index.html` to the root rather than creating a new file, this way it keeps all the customizations you added.
 
 ### Running code replacements on... `index.html`
 
@@ -155,9 +155,9 @@ The codemod looks for the `module.exports` and wraps it in a conditional that ch
 
 ### Running code replacements on... `tests/test-helper.js`
 
-If you go back to the modifications done in `tests/index.html`, you can see the new script imports ` { start } from './test-helper`, registers the test files then call `start`. The `start` function is the one the codemod creates at the present step.
+If you go back to the modifications done in `tests/index.html`, you can see the new script imports ` { start } from './test-helper`, registers the test files then calls `start`. The `start` function is the one the codemod creates in this step.
 
-Instead of loading the tests then calling `start` from `ember-qunit` directly, we rather export a `start` function that can be called later.
+Instead of loading the tests then calling `start` from `ember-qunit` directly in the module scope of the file, we instead export a `start` function that can be called later.
 
 Considering an empty 6.2 Ember app, the codemod does the following:
 
@@ -184,7 +184,7 @@ Considering an empty 6.2 Ember app, the codemod does the following:
 
 ### Running replacements on... `package.json`
 
-Last but not least, the codemod will modify three sort of things in the `package.json`:
+Last but not least, the codemod will modify three sorts of things in the `package.json`:
 
 - It will replace the build and test commands to use Vite instead of the legacy Ember commands.
 - It will add meta that identify your app as a v2 Ember app.
