@@ -8,6 +8,7 @@ import { packageUp } from 'package-up';
 const require = createRequire(import.meta.url);
 
 import { fileURLToPath } from 'node:url';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const testVersions = [
@@ -46,10 +47,17 @@ describe('Test on all Ember versions', function () {
         await execa({ cwd })`pnpm i ${packages.join(' ')}`;
       }
 
-      await execa({ cwd })`${cliPath} build`;
-      let { stdout } = await execa({ cwd })`${cliPath} test --path dist`;
+      // write out a basic acceptance test
+      await mkdir(join(cwd, 'tests/acceptance'));
+      await writeFile(
+        join(cwd, 'tests/acceptance/index-test.js'),
+        await readFile('./tests/fixtures/index-test.js', 'utf-8'),
+      );
 
-      expect(stdout).to.include('# pass  1');
+      await execa({ cwd, stdio: 'inherit' })`${cliPath} build`;
+      let { stdout } = await execa({ cwd })`${cliPath} test --path dist`;
+      console.log(stdout);
+
       expect(stdout).to.include('# fail  0');
 
       // this prevents the script from erroring because of this
@@ -67,7 +75,6 @@ describe('Test on all Ember versions', function () {
       let result = await execa({ cwd })`${cliPath} test`;
       console.log(result.stdout);
 
-      expect(result.stdout).to.include('# pass  1');
       expect(result.stdout).to.include('# fail  0');
     });
   }
