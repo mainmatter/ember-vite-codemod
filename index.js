@@ -4,13 +4,12 @@ import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import addMissingFiles from './lib/tasks/add-missing-files.js';
+import checkGitStatus from './lib/tasks/check-git-status.js';
 import ensureNoUnsupportedDeps from './lib/tasks/ensure-no-unsupported-deps.js';
 import ensureV2Addons from './lib/tasks/ensure-v2-addons.js';
 import moveIndex from './lib/tasks/move-index.js';
 import transformFiles from './lib/tasks/transform-files.js';
 import updatePackageJson from './lib/tasks/update-package-json.js';
-
-// Continue if git is clean
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
@@ -21,16 +20,23 @@ program
     'pursue the execution even when an upgradable v1 addon is detected',
     false,
   )
+  .option(
+    '--skip-git',
+    'pursue the execution even when not working in a clean git repository',
+    false,
+  )
   .option('--ts', 'indicate the app to migrate uses TypeScript', false)
   .option('--error-trace', 'print the whole error trace when available', false)
   .version(pkg.version);
 
 program.parse();
-
 const options = program.opts();
-const projectType = options.ts ? 'ts' : 'js';
 
 // Tasks order is important
+if (!options.skipGit) {
+  await checkGitStatus();
+}
+
 console.log('Checking for unsupported dependencies...\n');
 await ensureNoUnsupportedDeps();
 
@@ -40,6 +46,7 @@ if (!options.skipV2Addon) {
 }
 
 console.log('\nCreating new required files...\n');
+const projectType = options.ts ? 'ts' : 'js';
 await addMissingFiles({ projectType });
 await moveIndex();
 

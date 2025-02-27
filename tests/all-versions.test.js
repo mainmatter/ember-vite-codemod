@@ -59,7 +59,7 @@ describe('Test on all Ember versions', function () {
       await execaNode({
         cwd,
         stdio: 'inherit',
-      })`${updateScriptPath} --skip-v2-addon`;
+      })`${updateScriptPath} --skip-git --skip-v2-addon`;
 
       await execa({ cwd, stdio: 'inherit' })`pnpm i --no-frozen-lockfile`;
 
