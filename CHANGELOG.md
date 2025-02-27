@@ -2,6 +2,23 @@
 
 ## Release (2025-02-27)
 
+ember-vite-codemod 0.2.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#21](https://github.com/mainmatter/ember-vite-codemod/pull/21) Support Ember 5.12 (by updating packages) ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#19](https://github.com/mainmatter/ember-vite-codemod/pull/19) Enable testing for Ember 5.12 ([@mansona](https://github.com/mansona))
+  * [#22](https://github.com/mainmatter/ember-vite-codemod/pull/22) ignore changelog for linting ([@mansona](https://github.com/mansona))
+
+#### Committers: 2
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+## Release (2025-02-27)
+
 ember-vite-codemod 0.1.0 (minor)
 
 #### :rocket: Enhancement
