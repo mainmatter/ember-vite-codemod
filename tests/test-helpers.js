@@ -94,7 +94,7 @@ export const testVersions = [
   // ['ember-cli-4.4'],
   // ['ember-cli-4.8'],
   // // test helpers seems to be broken for most ember versions 😭
-  // ['ember-cli-5.4', ['@ember/test-helpers@latest']],
+  ['ember-cli-5.4', ['@ember/test-helpers@latest']],
   ['ember-cli-5.8', ['@ember/test-helpers@latest']],
   ['ember-cli-5.12', ['@ember/test-helpers@latest']],
   ['ember-cli-latest'],
