@@ -39,9 +39,8 @@ The codemod will look at all your Ember dependencies and will advise you for upd
 
 When you use Embroider in an app that depends on v1 addons, Embroider will try to auto-fix the v1 addons in a way that makes them compatible with Vite. This approach works for a number of known addons, but we cannot guarantee it will work for any v1 addon you use. The best way to avoid issues is that your classic app already relies only on v2 addons, and the codemod will guide you in that direction:
 
-- If one of your addons is v1 but the latest version on npm is v2, it's recommended to update.
-- If one of your addons is v1 and no v2 format is available, it's recommended to look for a different alternative or make the addon v2.
-- If one of your v1 addons but is known as being correctly rewriten by Embroider, the codemod won't notice you about it.
+- If one of your addons is v1 but the latest version on npm is v2 or has become a basic package, it's recommended to update.
+- If one of your addons is v1, no v2 format is available, and we don't know for sure if Embroider can rewrite it, the codemod will display a warning so you pay attention to this addon's behavior when building with Vite.
 - If one of your v1 addons comes from Ember app blueprint and is no longer used in Embroider+Vite world, the codemod won't notify you about it (because it will be removed in a later step).
 
 ### Creating new required files
