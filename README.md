@@ -14,12 +14,13 @@ npx ember-vite-codemod@latest [options]
 
 ### options
 
-| Option          | Default | Description                                                                                                                                                                                                                                |
-| :-------------- | :-----: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| --skip-git      |  false  | By default, the process exits if the git repository is not clean. Use this option to execute the command anyway at your own risk.                                                                                                          |
-| --skip-v2-addon |  false  | By default, the process exits if it detects v1 addons you could update or remove before switching to Vite. Use this option to execute the rest of the codemod anyway and discover if Embroider can deal with your v1 addons without issue. |
-| --ts            |  false  | Use this option to indicate your app uses typescript. It will impact what files the codemod creates and the packages it installs.                                                                                                          |
-| --error-trace   |  false  | In case of error, use this option to print the full error trace when it's available.                                                                                                                                                       |
+| Option              | Default | Description                                                                                                                                                                                                                                |
+| :------------------ | :-----: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --skip-git          |  false  | By default, the process exits if the git repository is not clean. Use this option to execute the command anyway at your own risk.                                                                                                          |
+| --skip-v2-addon     |  false  | By default, the process exits if it detects v1 addons you could update or remove before switching to Vite. Use this option to execute the rest of the codemod anyway and discover if Embroider can deal with your v1 addons without issue. |
+| --embroider-webpack |  false  | Use this option to indicate your app builds with @embroider/webpack. Essentially, the codemod will have different expectations about the content of ember-cli-build.                                                                       |
+| --ts                |  false  | Use this option to indicate your app uses typescript. It will impact what files the codemod creates and the packages it installs.                                                                                                          |
+| --error-trace       |  false  | In case of error, use this option to print the full error trace when it's available.                                                                                                                                                       |
 
 ## Steps
 
@@ -117,7 +118,9 @@ Since the file `app/config/environment.js` is created out of the app blueprint, 
 
 ### Running code replacements on... `ember-cli-build.js`
 
-Instead of building the app directly with Broccoli, we use `@embroider/compat`, a module that essentially serves as a bridge between classic apps and modern Vite apps. The Broccoli app instance is still there, but it's passed in argument to Embroider.
+#### From a classic Ember app
+
+Instead of building the app directly with Broccoli, we use `@embroider/compat`, a module that essentially serves as a bridge between classic apps and modern Embroider apps. The Broccoli app instance is still there, but it's passed in argument to Embroider.
 
 Considering an empty 6.2 Ember app, the codemod does the following:
 
@@ -137,6 +140,34 @@ Considering an empty 6.2 Ember app, the codemod does the following:
 +   return compatBuild(app, buildOnce);
   };
 ```
+
+⚠️ Adding extra Broccoli trees doesn't make sense in this context. If you used to return `app.toTree(extraTree);`, the corresponding feature will no longer work.
+
+#### From @embroider/webpack
+
+`@embroider/compat` will now rely on `@embroider/vite` instead of `@embroider/webpack` to build the app:
+
+```diff
+ 'use strict';
+
+  const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+- const { Webpack } = require('@embroider/webpack');
++ const { compatBuild } = require('@embroider/compat');
+
+  module.exports = function (defaults) {
++   const { buildOnce } = await import('@embroider/vite');
+    const app = new EmberApp(defaults, {
+      // Add options here
+    });
+
+-   return require('@embroider/compat').compatBuild(app, Webpack, { ...options });
++   return compatBuild(app, buildOnce, { ...options });
+  };
+```
+
+All your build options will be preserved as is, but be aware:
+
+⚠️ The codemod will remove your app dependency to Webpack. If you use options that relate specifically to Webpack behavior, `@embroider/vite` won't use them and the corresponding feature won't be supported. Also, note that when using some build options like `skipBabel`, Embroider triggers an informative build error to teach developers how to migrate to the modern system. In other words, just because you have a build error after running the codemod doesn't mean that something went wrong. It can be the expected follow-up step to fully complete your migration.
 
 ### Running code replacements on... `testem.js`
 
