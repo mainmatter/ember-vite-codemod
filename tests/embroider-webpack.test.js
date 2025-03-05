@@ -40,7 +40,7 @@ describe('Test on ember-cli-latest with Embroider+Webpack', function () {
        * triggers a build error with Vite, to force developers to migrate to the new Babel config.
        * So the developer workflow would be: 1) Run the codemod 2) Build and encounter the skipBabel error
        * 3) Remove skipBabel to get the build successful
-       * 
+       *
        * In the codemod tests, we don't want to modify the files output by the codemod in case
        * it falses our result. It's better to control the entry parameters, so we replace the initial
        * ember-cli-build with this version to get an output that can immediately build successfully.
