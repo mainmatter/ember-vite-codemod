@@ -73,7 +73,7 @@ async function testWithTestem(cwd, expect) {
 
   const viteExecaProcess = execa({
     cwd,
-  })`pnpm vite --force --clearScreen false`;
+  })`pnpm vite --clearScreen false`;
   viteExecaProcess.stdout.setEncoding('utf8');
 
   const HOST = await new Promise((resolve) => {
