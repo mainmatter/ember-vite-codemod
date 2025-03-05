@@ -53,7 +53,8 @@ async function testEmber(cwd, expect) {
 
 async function runCodemod(cwd) {
   console.log('🤖 running ember-vite-codemod 🐹');
-  // this prevents the script from erroring because of this
+  // ember-fetch is part of the classic app blueprint, but
+  // removing it is a prerequisite to running the codemod.
   await execa({ cwd })`pnpm uninstall ember-fetch`;
 
   const updateScriptPath = join(__dirname, '../index.js');
