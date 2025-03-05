@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-03-05)
+
+ember-vite-codemod 0.3.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#26](https://github.com/mainmatter/ember-vite-codemod/pull/26) Add ember-composable-helpers and ember-cli-mirage to unsupported deps ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 1
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2025-02-27)
 
 ember-vite-codemod 0.2.0 (minor)
