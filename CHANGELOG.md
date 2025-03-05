@@ -2,6 +2,18 @@
 
 ## Release (2025-03-05)
 
+ember-vite-codemod 0.3.1 (patch)
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#31](https://github.com/mainmatter/ember-vite-codemod/pull/31) start testing vite dev mode with testem ([@mansona](https://github.com/mansona))
+  * [#30](https://github.com/mainmatter/ember-vite-codemod/pull/30) refactor tests to be easier to follow ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
+## Release (2025-03-05)
+
 ember-vite-codemod 0.3.0 (minor)
 
 #### :rocket: Enhancement
