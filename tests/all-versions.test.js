@@ -95,8 +95,6 @@ async function testWithTestem(cwd, expect) {
 
   expect(result.exitCode, result.output).to.equal(0);
   console.log(result.stdout);
-
-  viteExecaProcess.kill();
 }
 
 describe('Test on all Ember versions', function () {
