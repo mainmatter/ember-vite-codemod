@@ -160,12 +160,17 @@ Considering an empty 6.2 Ember app, the codemod does the following:
       // Add options here
     });
 
--   return require('@embroider/compat').compatBuild(app, Webpack, { ...options });
-+   return compatBuild(app, buildOnce, { ...options });
+-   return require('@embroider/compat').compatBuild(app, Webpack, {
++   return compatBuild(app, buildOnce, {
+      ...buildOptions,
+-     skipBabel: [{
+-       package: 'qunit'
+-     }]
+    });
   };
 ```
 
-All your build options will be preserved as is, but be aware:
+All your build options will be preserved as is (except `skipBabel` for `'qunit'` that is removed), but be aware:
 
 ⚠️ The codemod will remove your app dependency to Webpack. If you use options that relate specifically to Webpack behavior, `@embroider/vite` won't use them and the corresponding feature won't be supported. Also, note that when using some build options like `skipBabel`, Embroider triggers an informative build error to teach developers how to migrate to the modern system. In other words, just because you have a build error after running the codemod doesn't mean that something went wrong. It can be the expected follow-up step to fully complete your migration.
 
