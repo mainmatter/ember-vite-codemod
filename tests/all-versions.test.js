@@ -5,6 +5,7 @@ import tmp from 'tmp';
 import { dirname, join } from 'path';
 import { packageUp } from 'package-up';
 import fixturify from 'fixturify';
+import stripAnsi from 'strip-ansi';
 
 const require = createRequire(import.meta.url);
 
@@ -77,7 +78,7 @@ async function testWithTestem(cwd, expect) {
 
   const HOST = await new Promise((resolve) => {
     viteExecaProcess.stdout.on('data', (chunk) => {
-      const matches = /Local:\s+(https?:\/\/.*)\//g.exec(chunk);
+      const matches = /Local:\s+(https?:\/\/.*)\//g.exec(stripAnsi(chunk));
 
       if (matches) {
         resolve(matches[1]);

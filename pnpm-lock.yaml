@@ -75,6 +75,9 @@ importers:
       release-plan:
         specifier: ^0.13.1
         version: 0.13.1
+      strip-ansi:
+        specifier: ^7.1.0
+        version: 7.1.0
       tmp:
         specifier: ^0.2.3
         version: 0.2.3
