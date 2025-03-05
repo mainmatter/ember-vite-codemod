@@ -45,6 +45,7 @@
     "prettier": "^3.5.1",
     "recast": "^0.23.9",
     "release-plan": "^0.13.1",
+    "strip-ansi": "^7.1.0",
     "tmp": "^0.2.3",
     "vitest": "^3.0.7"
   },
