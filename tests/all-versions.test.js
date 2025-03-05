@@ -3,7 +3,6 @@ import tmp from 'tmp';
 import { join } from 'path';
 import {
   generateEmberApp,
-  getCliPath,
   runCodemod,
   testEmber,
   testWithTestem,
@@ -61,9 +60,8 @@ describe('Test on Ember versions with Embroider+Webpack', function () {
 async function executeTest(expect, version, packages, cliOptions, testemPort) {
   let tmpobj = tmp.dirSync({ unsafeCleanup: true });
   const cwd = join(tmpobj.name, 'test-app');
-  const cliPath = await getCliPath(version);
 
-  await generateEmberApp(tmpobj.name, version, packages, cliPath, cliOptions);
+  await generateEmberApp(tmpobj.name, version, packages, cliOptions);
   await testEmber(cwd, expect, testemPort);
   await runCodemod(cwd);
   await testEmber(cwd, expect, testemPort);
