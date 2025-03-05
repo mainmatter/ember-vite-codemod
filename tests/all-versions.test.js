@@ -19,7 +19,7 @@ const testVersions = [
   // ['ember-cli-4.8'],
   // // test helpers seems to be broken for most ember versions 😭
   // ['ember-cli-5.4', ['@ember/test-helpers@latest']],
-  // ['ember-cli-5.8', ['@ember/test-helpers@latest']],
+  ['ember-cli-5.8', ['@ember/test-helpers@latest']],
   ['ember-cli-5.12', ['@ember/test-helpers@latest']],
   ['ember-cli-latest'],
 ];
@@ -73,7 +73,7 @@ async function testWithTestem(cwd, expect) {
 
   const viteExecaProcess = execa({
     cwd,
-  })`pnpm vite --force --clearScreen false`;
+  })`pnpm vite --clearScreen false`;
   viteExecaProcess.stdout.setEncoding('utf8');
 
   const HOST = await new Promise((resolve) => {
