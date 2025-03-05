@@ -25,6 +25,11 @@ program
     'pursue the execution even when not working in a clean git repository',
     false,
   )
+  .option(
+    '--embroider-webpack',
+    'indicate the app to migrate uses @embroider/webpack to build',
+    false,
+  )
   .option('--ts', 'indicate the app to migrate uses TypeScript', false)
   .option('--error-trace', 'print the whole error trace when available', false)
   .version(pkg.version);
@@ -51,7 +56,10 @@ await addMissingFiles({ projectType });
 await moveIndex();
 
 console.log('\nRunning code replacements...\n');
-await transformFiles(options.errorTrace);
+await transformFiles({
+  isEmbroiderWebpack: options.embroiderWebpack,
+  showErrorTrace: options.errorTrace,
+});
 await updatePackageJson();
 
 console.log('\nAll set! Re-install the app dependencies then run your linter');
