@@ -4,11 +4,19 @@ import { packageUp } from 'package-up';
 import fixturify from 'fixturify';
 import stripAnsi from 'strip-ansi';
 
-export async function generateEmberApp(tmpDir, version, packages, cliOptions) {
-  console.log(`🤖 generating ember app for version ${version} 🐹`);
-
+export async function getCliPath(version) {
   const path = dirname(require.resolve(version));
-  const cliPath = join(dirname(await packageUp({ cwd: path })), 'bin', 'ember');
+  return join(dirname(await packageUp({ cwd: path })), 'bin', 'ember');
+}
+
+export async function generateEmberApp(
+  tmpDir,
+  version,
+  packages,
+  cliPath,
+  cliOptions,
+) {
+  console.log(`🤖 generating ember app for version ${version} 🐹`);
   const cwd = join(tmpDir, 'test-app');
 
   await execaNode({
@@ -23,10 +31,12 @@ export async function generateEmberApp(tmpDir, version, packages, cliOptions) {
   fixturify.writeSync(cwd, fixture);
 }
 
-export async function testEmber(cwd, expect) {
+export async function testEmber(cwd, expect, testemPort) {
   console.log('🤖 testing ember app 🐹');
   await execa({ cwd, stdio: 'inherit' })`npm run build`;
-  let { stdout } = await execa({ cwd })`npm run test:ember --test-port 0`;
+  let { stdout } = await execa({
+    cwd,
+  })`npm run test:ember -- --test-port=${testemPort}`;
   console.log(stdout);
 
   expect(stdout).to.include('# fail  0');
@@ -47,7 +57,7 @@ export async function runCodemod(cwd) {
   await execa({ cwd, stdio: 'inherit' })`pnpm i --no-frozen-lockfile`;
 }
 
-export async function testWithTestem(cwd, expect) {
+export async function testWithTestem(cwd, expect, testemPort) {
   console.log('🤖 running dev tests with testem 🐹');
   await execa({ cwd })`pnpm i --save-dev testem http-proxy`;
 
@@ -71,7 +81,7 @@ export async function testWithTestem(cwd, expect) {
     env: {
       HOST,
     },
-  })`pnpm testem --file testem-dev.js ci`;
+  })`pnpm testem --port ${testemPort} --file testem-dev.js ci`;
 
   expect(result.exitCode, result.output).to.equal(0);
   console.log(result.stdout);

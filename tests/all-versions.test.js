@@ -3,6 +3,7 @@ import tmp from 'tmp';
 import { join } from 'path';
 import {
   generateEmberApp,
+  getCliPath,
   runCodemod,
   testEmber,
   testWithTestem,
@@ -20,22 +21,51 @@ const testVersions = [
   ['ember-cli-latest'],
 ];
 
+let port = 7357;
+function getPort() {
+  return port++;
+}
+
 describe('Test on all Ember versions', function () {
   for (let [version, packages] of testVersions) {
-    it(`should work for ember version ${version}`, async function ({ expect }) {
-      let tmpobj = tmp.dirSync({ unsafeCleanup: true });
-      const cwd = join(tmpobj.name, 'test-app');
-
-      await generateEmberApp(
-        tmpobj.name,
-        version,
-        packages,
-        '--skip-npm --pnpm',
-      );
-      await testEmber(cwd, expect);
-      await runCodemod(cwd);
-      await testEmber(cwd, expect);
-      await testWithTestem(cwd, expect);
-    });
+    it.concurrent(
+      `should work for ember version ${version}`,
+      async function ({ expect }) {
+        await executeTest(
+          expect,
+          version,
+          packages,
+          '--skip-npm --pnpm',
+          getPort(),
+        );
+      },
+    );
   }
 });
+
+describe('Test on Ember versions with Embroider+Webpack', function () {
+  it.concurrent(
+    `should work for ember version ember-cli-latest with Embroider+Webpack`,
+    async function ({ expect }) {
+      await executeTest(
+        expect,
+        'ember-cli-latest',
+        undefined,
+        '-embroider --skip-npm --pnpm',
+        getPort(),
+      );
+    },
+  );
+});
+
+async function executeTest(expect, version, packages, cliOptions, testemPort) {
+  let tmpobj = tmp.dirSync({ unsafeCleanup: true });
+  const cwd = join(tmpobj.name, 'test-app');
+  const cliPath = await getCliPath(version);
+
+  await generateEmberApp(tmpobj.name, version, packages, cliPath, cliOptions);
+  await testEmber(cwd, expect, testemPort);
+  await runCodemod(cwd);
+  await testEmber(cwd, expect, testemPort);
+  await testWithTestem(cwd, expect, testemPort);
+}
