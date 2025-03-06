@@ -66,6 +66,9 @@ importers:
       package-up:
         specifier: ^5.0.0
         version: 5.0.0
+      portfinder:
+        specifier: ^1.0.33
+        version: 1.0.33
       prettier:
         specifier: ^3.5.1
         version: 3.5.1
@@ -3603,8 +3606,8 @@ packages:
     resolution: {integrity: sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==}
     engines: {node: '>=8'}
 
-  portfinder@1.0.32:
-    resolution: {integrity: sha512-on2ZJVVDXRADWE6jnQaX0ioEylzgBpQk8r55NE4wjXW1ZxO+BgDlY6DXwj20i0V8eB4SenDQ00WEaxfiIQPcxg==}
+  portfinder@1.0.33:
+    resolution: {integrity: sha512-+2jndHT63cL5MdQOwDm9OT2dIe11zVpjV+0GGRXdtO1wpPxv260NfVqoEXtYAi/shanmm3W4+yLduIe55ektTw==}
     engines: {node: '>= 0.12.0'}
 
   posix-character-classes@0.1.1:
@@ -6616,7 +6619,7 @@ snapshots:
       nopt: 3.0.6
       npm-package-arg: 8.1.5
       p-defer: 3.0.0
-      portfinder: 1.0.32
+      portfinder: 1.0.33
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
       quick-temp: 0.1.8
@@ -6767,7 +6770,7 @@ snapshots:
       npm-package-arg: 10.1.0
       os-locale: 5.0.0
       p-defer: 3.0.0
-      portfinder: 1.0.32
+      portfinder: 1.0.33
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
       quick-temp: 0.1.8
@@ -6918,7 +6921,7 @@ snapshots:
       nopt: 3.0.6
       npm-package-arg: 8.1.5
       p-defer: 3.0.0
-      portfinder: 1.0.32
+      portfinder: 1.0.33
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
       quick-temp: 0.1.8
@@ -7070,7 +7073,7 @@ snapshots:
       nopt: 3.0.6
       npm-package-arg: 9.1.2
       p-defer: 3.0.0
-      portfinder: 1.0.32
+      portfinder: 1.0.33
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
       quick-temp: 0.1.8
@@ -7215,7 +7218,7 @@ snapshots:
       npm-package-arg: 10.1.0
       os-locale: 5.0.0
       p-defer: 3.0.0
-      portfinder: 1.0.32
+      portfinder: 1.0.33
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
       quick-temp: 0.1.8
@@ -7357,7 +7360,7 @@ snapshots:
       npm-package-arg: 10.1.0
       os-locale: 5.0.0
       p-defer: 3.0.0
-      portfinder: 1.0.32
+      portfinder: 1.0.33
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
       quick-temp: 0.1.8
@@ -7500,7 +7503,7 @@ snapshots:
       npm-package-arg: 10.1.0
       os-locale: 5.0.0
       p-defer: 3.0.0
-      portfinder: 1.0.32
+      portfinder: 1.0.33
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
       quick-temp: 0.1.8
@@ -7644,7 +7647,7 @@ snapshots:
       npm-package-arg: 12.0.2
       os-locale: 5.0.0
       p-defer: 3.0.0
-      portfinder: 1.0.32
+      portfinder: 1.0.33
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
       quick-temp: 0.1.8
@@ -7786,7 +7789,7 @@ snapshots:
       npm-package-arg: 12.0.2
       os-locale: 5.0.0
       p-defer: 3.0.0
-      portfinder: 1.0.32
+      portfinder: 1.0.33
       promise-map-series: 0.3.0
       promise.hash.helper: 1.0.8
       quick-temp: 0.1.8
@@ -9828,7 +9831,7 @@ snapshots:
     dependencies:
       find-up: 3.0.0
 
-  portfinder@1.0.32:
+  portfinder@1.0.33:
     dependencies:
       async: 2.6.4
       debug: 3.2.7
