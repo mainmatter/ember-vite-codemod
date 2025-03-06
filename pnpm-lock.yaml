@@ -66,9 +66,6 @@ importers:
       package-up:
         specifier: ^5.0.0
         version: 5.0.0
-      portfinder:
-        specifier: ^1.0.33
-        version: 1.0.33
       prettier:
         specifier: ^3.5.1
         version: 3.5.1
