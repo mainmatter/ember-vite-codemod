@@ -2,16 +2,20 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "0.2.0",
-      "newVersion": "0.3.0",
+      "oldVersion": "0.3.0",
+      "newVersion": "0.4.0",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-03-05)\n\nember-vite-codemod 0.3.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#26](https://github.com/mainmatter/ember-vite-codemod/pull/26) Add ember-composable-helpers and ember-cli-mirage to unsupported deps ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### Committers: 1\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n"
+  "description": "## Release (2025-03-07)\n\nember-vite-codemod 0.4.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#27](https://github.com/mainmatter/ember-vite-codemod/pull/27) Support apps building with @embroider/webpack ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### :house: Internal\n* `ember-vite-codemod`\n  * [#33](https://github.com/mainmatter/ember-vite-codemod/pull/33) Remove devDep portfinder ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n  * [#31](https://github.com/mainmatter/ember-vite-codemod/pull/31) start testing vite dev mode with testem ([@mansona](https://github.com/mansona))\n  * [#30](https://github.com/mainmatter/ember-vite-codemod/pull/30) refactor tests to be easier to follow ([@mansona](https://github.com/mansona))\n\n#### Committers: 2\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n"
 }
