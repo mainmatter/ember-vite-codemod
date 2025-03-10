@@ -23,6 +23,7 @@
   "dependencies": {
     "@embroider/app-blueprint": "^0.23.0",
     "commander": "^13.1.0",
+    "recast": "^0.23.9",
     "semver": "^7.7.1"
   },
   "devDependencies": {
@@ -43,7 +44,6 @@
     "globals": "^15.15.0",
     "package-up": "^5.0.0",
     "prettier": "^3.5.1",
-    "recast": "^0.23.9",
     "release-plan": "^0.13.1",
     "strip-ansi": "^7.1.0",
     "tmp": "^0.2.3",
