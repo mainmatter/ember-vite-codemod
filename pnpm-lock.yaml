@@ -14,6 +14,9 @@ importers:
       commander:
         specifier: ^13.1.0
         version: 13.1.0
+      execa:
+        specifier: ^9.5.2
+        version: 9.5.2
       recast:
         specifier: ^0.23.9
         version: 0.23.9
@@ -57,9 +60,6 @@ importers:
       eslint-config-prettier:
         specifier: ^10.0.1
         version: 10.0.1(eslint@9.20.1)
-      execa:
-        specifier: ^9.5.2
-        version: 9.5.2
       fixturify:
         specifier: ^3.0.0
         version: 3.0.0
