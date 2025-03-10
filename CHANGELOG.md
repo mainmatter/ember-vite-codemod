@@ -1,5 +1,23 @@
 # Changelog
 
+## Release (2025-03-07)
+
+ember-vite-codemod 0.4.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#27](https://github.com/mainmatter/ember-vite-codemod/pull/27) Support apps building with @embroider/webpack ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#33](https://github.com/mainmatter/ember-vite-codemod/pull/33) Remove devDep portfinder ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#31](https://github.com/mainmatter/ember-vite-codemod/pull/31) start testing vite dev mode with testem ([@mansona](https://github.com/mansona))
+  * [#30](https://github.com/mainmatter/ember-vite-codemod/pull/30) refactor tests to be easier to follow ([@mansona](https://github.com/mansona))
+
+#### Committers: 2
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2025-03-05)
 
 ember-vite-codemod 0.3.0 (minor)
