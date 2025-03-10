@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-03-10)
+
+ember-vite-codemod 0.4.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#35](https://github.com/mainmatter/ember-vite-codemod/pull/35) move recast to a dependency ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-03-07)
 
 ember-vite-codemod 0.4.0 (minor)
