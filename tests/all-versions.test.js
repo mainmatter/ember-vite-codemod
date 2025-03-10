@@ -3,7 +3,6 @@ import tmp from 'tmp';
 import { join } from 'path';
 import {
   generateEmberApp,
-  getCliPath,
   runCodemod,
   testEmber,
   testWithTestem,
@@ -16,7 +15,7 @@ const testVersions = [
   // ['ember-cli-4.8'],
   // // test helpers seems to be broken for most ember versions 😭
   // ['ember-cli-5.4', ['@ember/test-helpers@latest']],
-  // ['ember-cli-5.8', ['@ember/test-helpers@latest']],
+  ['ember-cli-5.8', ['@ember/test-helpers@latest']],
   ['ember-cli-5.12', ['@ember/test-helpers@latest']],
   ['ember-cli-latest'],
 ];
@@ -61,9 +60,8 @@ describe('Test on Ember versions with Embroider+Webpack', function () {
 async function executeTest(expect, version, packages, cliOptions, testemPort) {
   let tmpobj = tmp.dirSync({ unsafeCleanup: true });
   const cwd = join(tmpobj.name, 'test-app');
-  const cliPath = await getCliPath(version);
 
-  await generateEmberApp(tmpobj.name, version, packages, cliPath, cliOptions);
+  await generateEmberApp(tmpobj.name, version, packages, cliOptions);
   await testEmber(cwd, expect, testemPort);
   await runCodemod(cwd);
   await testEmber(cwd, expect, testemPort);

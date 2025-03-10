@@ -4,19 +4,11 @@ import { packageUp } from 'package-up';
 import fixturify from 'fixturify';
 import stripAnsi from 'strip-ansi';
 
-export async function getCliPath(version) {
-  const path = dirname(require.resolve(version));
-  return join(dirname(await packageUp({ cwd: path })), 'bin', 'ember');
-}
-
-export async function generateEmberApp(
-  tmpDir,
-  version,
-  packages,
-  cliPath,
-  cliOptions,
-) {
+export async function generateEmberApp(tmpDir, version, packages, cliOptions) {
   console.log(`🤖 generating ember app for version ${version} 🐹`);
+
+  const path = dirname(require.resolve(version));
+  const cliPath = join(dirname(await packageUp({ cwd: path })), 'bin', 'ember');
   const cwd = join(tmpDir, 'test-app');
 
   await execaNode({
