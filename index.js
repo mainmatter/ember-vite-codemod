@@ -47,7 +47,7 @@ await ensureNoUnsupportedDeps();
 
 if (!options.skipV2Addon) {
   console.log('\nChecking addons are v2...\n');
-  await ensureV2Addons();
+  await ensureV2Addons(options);
 }
 
 console.log('\nCreating new required files...\n');
