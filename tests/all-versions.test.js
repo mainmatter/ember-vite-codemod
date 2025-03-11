@@ -45,7 +45,7 @@ describe('Test on all Ember versions', function () {
 
 describe('Test on Ember versions with typescript', function () {
   it.concurrent(
-    `should work for ember version ember-cli-latest with Embroider+Webpack`,
+    `should work for ember version ember-cli-latest with typescript`,
     async function ({ expect }) {
       await executeTest(
         expect,
