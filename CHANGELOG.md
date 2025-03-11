@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-03-11)
+
+ember-vite-codemod 0.5.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#39](https://github.com/mainmatter/ember-vite-codemod/pull/39) make sure the codemod doesn't exit if it comes across private packages ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-03-10)
 
 ember-vite-codemod 0.4.1 (patch)

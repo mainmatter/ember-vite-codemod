@@ -1,17 +1,17 @@
 {
   "solution": {
     "ember-vite-codemod": {
-      "impact": "patch",
-      "oldVersion": "0.4.0",
-      "newVersion": "0.4.1",
+      "impact": "minor",
+      "oldVersion": "0.4.1",
+      "newVersion": "0.5.0",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-03-10)\n\nember-vite-codemod 0.4.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#35](https://github.com/mainmatter/ember-vite-codemod/pull/35) move recast to a dependency ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2025-03-11)\n\nember-vite-codemod 0.5.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#39](https://github.com/mainmatter/ember-vite-codemod/pull/39) make sure the codemod doesn't exit if it comes across private packages ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
