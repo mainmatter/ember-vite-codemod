@@ -2,8 +2,8 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "0.5.0",
-      "newVersion": "0.6.0",
+      "oldVersion": "0.6.0",
+      "newVersion": "0.7.0",
       "constraints": [
         {
           "impact": "minor",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-03-12)\n\nember-vite-codemod 0.6.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#37](https://github.com/mainmatter/ember-vite-codemod/pull/37) Support transforming files with any extension ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-03-13)\n\nember-vite-codemod 0.7.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#47](https://github.com/mainmatter/ember-vite-codemod/pull/47) Add `ember-template-imports` to packagesToRemove ([@johanrd](https://github.com/johanrd))\n\n#### Committers: 1\n- [@johanrd](https://github.com/johanrd)\n"
 }
