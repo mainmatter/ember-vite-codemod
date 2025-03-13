@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-03-13)
+
+ember-vite-codemod 0.7.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#47](https://github.com/mainmatter/ember-vite-codemod/pull/47) Add `ember-template-imports` to packagesToRemove ([@johanrd](https://github.com/johanrd))
+
+#### Committers: 1
+- [@johanrd](https://github.com/johanrd)
+
 ## Release (2025-03-12)
 
 ember-vite-codemod 0.6.0 (minor)
