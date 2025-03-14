@@ -1,5 +1,5 @@
 diff --git a/src/compat-adapters/ember-source.js b/src/compat-adapters/ember-source.js
-index c961d437ea2cbac64ab4c80274f3f2f3ea8d60c7..e64956034c7b91e2000d76d896842c1c1b292f12 100644
+index c961d437ea2cbac64ab4c80274f3f2f3ea8d60c7..a97e7abd36c4f0959c25117d9b8cb1fa3b06e893 100644
 --- a/src/compat-adapters/ember-source.js
 +++ b/src/compat-adapters/ember-source.js
 @@ -101,7 +101,10 @@ class default_1 extends v1_addon_1.default {
@@ -14,7 +14,7 @@ index c961d437ea2cbac64ab4c80274f3f2f3ea8d60c7..e64956034c7b91e2000d76d896842c1c
          }
          if ((0, semver_1.satisfies)(this.packageJSON.version, '<5.12.0')) {
              trees.push(new FixDeprecateFunction([packages]));
-@@ -159,6 +162,91 @@ class FixStringLoc extends broccoli_plugin_1.default {
+@@ -159,6 +162,103 @@ class FixStringLoc extends broccoli_plugin_1.default {
          (0, fs_extra_1.outputFileSync)((0, path_1.resolve)(this.outputPath, 'ember', 'index.js'), outSource, 'utf8');
      }
  }
@@ -22,6 +22,19 @@ index c961d437ea2cbac64ab4c80274f3f2f3ea8d60c7..e64956034c7b91e2000d76d896842c1c
 +  build() {
 +      updateFileWithTransform(this, 'ember/index.js', function (babel) {
 +          const { types: t } = babel;
++          function createLoader() {
++              return t.objectExpression([
++                  t.objectMethod('get', t.identifier('require'), [], t.blockStatement([
++                      t.returnStatement(t.memberExpression(t.identifier('globalThis'), t.identifier('require'))),
++                  ])),
++                  t.objectMethod('get', t.identifier('define'), [], t.blockStatement([
++                      t.returnStatement(t.memberExpression(t.identifier('globalThis'), t.identifier('define'))),
++                  ])),
++                  t.objectMethod('get', t.identifier('registry'), [], t.blockStatement([
++                      t.returnStatement(t.logicalExpression('??', t.optionalMemberExpression(t.memberExpression(t.identifier('globalThis'), t.identifier('requirejs')), t.identifier('entries'), false, true), t.optionalMemberExpression(t.memberExpression(t.identifier('globalThis'), t.identifier('require')), t.identifier('entries'), false, true))),
++                  ])),
++              ]);
++          }
 +          return {
 +              visitor: {
 +                  CallExpression(path) {
@@ -37,23 +50,22 @@ index c961d437ea2cbac64ab4c80274f3f2f3ea8d60c7..e64956034c7b91e2000d76d896842c1c
 +                          path.replaceWith(t.importDeclaration([t.importSpecifier(t.identifier('EmberTestingImpl'), t.identifier('_impl'))], t.stringLiteral('@ember/test')));
 +                      }
 +                  },
++                  VariableDeclaration(path) {
++                      if (path.node.declarations[0].id.type === 'Identifier' &&
++                          path.node.declarations[0].id.name === 'PartialEmber' &&
++                          path.node.declarations[0].init.type === 'ObjectExpression') {
++                          const declaration = path.node.declarations[0];
++                          const loader = declaration.init.properties.find(p => (p.type === 'ObjectProperty' && p.key.type === 'Identifier' && p.key.name) === '__loader');
++                          loader.value = createLoader();
++                      }
++                  },
 +                  AssignmentExpression(path) {
 +                      if (path.node.left.type === 'MemberExpression' &&
 +                          path.node.left.object.type === 'Identifier' &&
 +                          path.node.left.object.name === 'Ember' &&
 +                          path.node.left.property.type === 'Identifier' &&
 +                          path.node.left.property.name === '__loader') {
-+                          path.node.right = t.objectExpression([
-+                              t.objectMethod('get', t.identifier('require'), [], t.blockStatement([
-+                                  t.returnStatement(t.memberExpression(t.identifier('globalThis'), t.identifier('require'))),
-+                              ])),
-+                              t.objectMethod('get', t.identifier('define'), [], t.blockStatement([
-+                                  t.returnStatement(t.memberExpression(t.identifier('globalThis'), t.identifier('define'))),
-+                              ])),
-+                              t.objectMethod('get', t.identifier('registry'), [], t.blockStatement([
-+                                  t.returnStatement(t.logicalExpression('??', t.optionalMemberExpression(t.memberExpression(t.identifier('globalThis'), t.identifier('requirejs')), t.identifier('entries'), false, true), t.optionalMemberExpression(t.memberExpression(t.identifier('globalThis'), t.identifier('require')), t.identifier('entries'), false, true))),
-+                              ])),
-+                          ]);
++                          path.node.right = createLoader();
 +                      }
 +                  },
 +              },
@@ -106,7 +118,7 @@ index c961d437ea2cbac64ab4c80274f3f2f3ea8d60c7..e64956034c7b91e2000d76d896842c1c
  class FixDeprecateFunction extends broccoli_plugin_1.default {
      build() {
          let inSource = (0, fs_extra_1.readFileSync)((0, path_1.resolve)(this.inputPaths[0], '@ember', 'debug', 'index.js'), 'utf8');
-@@ -223,6 +311,9 @@ function updateFileWithTransform(context, file, transformFunction) {
+@@ -223,6 +323,9 @@ function updateFileWithTransform(context, file, transformFunction) {
      }).code;
      (0, fs_extra_1.outputFileSync)((0, path_1.resolve)(context.outputPath, file), outSource, 'utf8');
  }
