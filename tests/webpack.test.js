@@ -1,6 +1,6 @@
 import { describe, it } from 'vitest';
 
-import { testVersions, executeTest, getPort } from './standard.test';
+import { testVersions, executeTest, getPort } from './test-helpers';
 
 describe.concurrent('Test webpack blueprint on Ember', function () {
   it.for(testVersions)(
