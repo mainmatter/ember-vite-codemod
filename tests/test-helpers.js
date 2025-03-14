@@ -26,7 +26,7 @@ export async function generateEmberApp(
   })`${cliPath} new test-app ${cliOptions}`;
   await execa({ cwd })`pnpm i`;
   if (packages?.length) {
-    await execa({ cwd })`pnpm i ${packages.join(' ')}`;
+    await execa({ cwd })`pnpm i --save-dev ${packages}`;
   }
 
   const fixture = fixturify.readSync('./tests/fixtures');
@@ -104,7 +104,7 @@ export const testVersions = [
   // ['ember-cli-3.28'],
   // ['ember-cli-4.4'],
   // ['ember-cli-4.8'],
-  ['ember-cli-4.12'],
+  ['ember-cli-4.12', ['ember-data@^4.13.0-alpha.5', 'ember-inflector']], // we can't support older ember data versions
   // // test helpers seems to be broken for most ember versions 😭
   ['ember-cli-5.4', ['@ember/test-helpers@latest']],
   ['ember-cli-5.8', ['@ember/test-helpers@latest']],
