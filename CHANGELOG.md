@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2025-03-14)
+
+ember-vite-codemod 0.8.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#15](https://github.com/mainmatter/ember-vite-codemod/pull/15) bump minimum embroider versions and enable testing for ember-5.8 ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#51](https://github.com/mainmatter/ember-vite-codemod/pull/51) add fail-fast: false to CI matrix ([@mansona](https://github.com/mansona))
+  * [#49](https://github.com/mainmatter/ember-vite-codemod/pull/49) split out webpack and typescript tests properly ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-03-13)
 
 ember-vite-codemod 0.7.0 (minor)
