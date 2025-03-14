@@ -10,6 +10,7 @@ import ensureV2Addons from './lib/tasks/ensure-v2-addons.js';
 import moveIndex from './lib/tasks/move-index.js';
 import transformFiles from './lib/tasks/transform-files.js';
 import updatePackageJson from './lib/tasks/update-package-json.js';
+import { checkModulePrefixMisMatch } from './lib/tasks/check-modulePrefix-mismatch.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
@@ -41,6 +42,8 @@ const options = program.opts();
 if (!options.skipGit) {
   await checkGitStatus();
 }
+
+await checkModulePrefixMisMatch();
 
 console.log('Checking for unsupported dependencies...\n');
 await ensureNoUnsupportedDeps();
