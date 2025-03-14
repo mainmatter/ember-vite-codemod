@@ -103,7 +103,7 @@ export async function testWithTestem(cwd, expect, testemPort) {
 export const testVersions = [
   // ['ember-cli-3.28'],
   // ['ember-cli-4.4'],
-  // ['ember-cli-4.8'],
+  ['ember-cli-4.8', ['ember-data@^4.13.0-alpha.5', 'ember-inflector']],
   ['ember-cli-4.12', ['ember-data@^4.13.0-alpha.5', 'ember-inflector']], // we can't support older ember data versions
   // // test helpers seems to be broken for most ember versions 😭
   ['ember-cli-5.4', ['@ember/test-helpers@latest']],
