@@ -29,6 +29,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    strategy:
+      matrix:
+        file:
+          - standard
+          - typescript
+          - webpack
 
     steps:
       - uses: actions/checkout@v4
@@ -38,4 +44,4 @@ jobs:
           node-version: 18
           cache: pnpm
       - run: pnpm i --frozen-lockfile
-      - run: pnpm run test
+      - run: pnpm run test tests/${{ matrix.file }}.test.js
