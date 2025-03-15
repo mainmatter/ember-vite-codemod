@@ -1,0 +1,58 @@
+diff --git a/src/compat-adapters/ember-source.js b/src/compat-adapters/ember-source.js
+index 5f174b8bb06af3d2c3dca69cb67273e50ff59cef..954389461ada69b75fa5f431ac3433cd98c48a5d 100644
+--- a/src/compat-adapters/ember-source.js
++++ b/src/compat-adapters/ember-source.js
+@@ -166,6 +166,19 @@ class ReplaceRequire extends broccoli_plugin_1.default {
+     build() {
+         updateFileWithTransform(this, 'ember/index.js', function (babel) {
+             const { types: t } = babel;
++            function createLoader() {
++                return t.objectExpression([
++                    t.objectMethod('get', t.identifier('require'), [], t.blockStatement([
++                        t.returnStatement(t.memberExpression(t.identifier('globalThis'), t.identifier('require'))),
++                    ])),
++                    t.objectMethod('get', t.identifier('define'), [], t.blockStatement([
++                        t.returnStatement(t.memberExpression(t.identifier('globalThis'), t.identifier('define'))),
++                    ])),
++                    t.objectMethod('get', t.identifier('registry'), [], t.blockStatement([
++                        t.returnStatement(t.logicalExpression('??', t.optionalMemberExpression(t.memberExpression(t.identifier('globalThis'), t.identifier('requirejs')), t.identifier('entries'), false, true), t.optionalMemberExpression(t.memberExpression(t.identifier('globalThis'), t.identifier('require')), t.identifier('entries'), false, true))),
++                    ])),
++                ]);
++            }
+             return {
+                 visitor: {
+                     CallExpression(path) {
+@@ -181,23 +194,22 @@ class ReplaceRequire extends broccoli_plugin_1.default {
+                             path.replaceWith(t.importDeclaration([t.importSpecifier(t.identifier('EmberTestingImpl'), t.identifier('_impl'))], t.stringLiteral('@ember/test')));
+                         }
+                     },
++                    VariableDeclaration(path) {
++                        if (path.node.declarations[0].id.type === 'Identifier' &&
++                            path.node.declarations[0].id.name === 'PartialEmber' &&
++                            path.node.declarations[0].init.type === 'ObjectExpression') {
++                            const declaration = path.node.declarations[0];
++                            const loader = declaration.init.properties.find(p => (p.type === 'ObjectProperty' && p.key.type === 'Identifier' && p.key.name) === '__loader');
++                            loader.value = createLoader();
++                        }
++                    },
+                     AssignmentExpression(path) {
+                         if (path.node.left.type === 'MemberExpression' &&
+                             path.node.left.object.type === 'Identifier' &&
+                             path.node.left.object.name === 'Ember' &&
+                             path.node.left.property.type === 'Identifier' &&
+                             path.node.left.property.name === '__loader') {
+-                            path.node.right = t.objectExpression([
+-                                t.objectMethod('get', t.identifier('require'), [], t.blockStatement([
+-                                    t.returnStatement(t.memberExpression(t.identifier('globalThis'), t.identifier('require'))),
+-                                ])),
+-                                t.objectMethod('get', t.identifier('define'), [], t.blockStatement([
+-                                    t.returnStatement(t.memberExpression(t.identifier('globalThis'), t.identifier('define'))),
+-                                ])),
+-                                t.objectMethod('get', t.identifier('registry'), [], t.blockStatement([
+-                                    t.returnStatement(t.logicalExpression('??', t.optionalMemberExpression(t.memberExpression(t.identifier('globalThis'), t.identifier('requirejs')), t.identifier('entries'), false, true), t.optionalMemberExpression(t.memberExpression(t.identifier('globalThis'), t.identifier('require')), t.identifier('entries'), false, true))),
+-                                ])),
+-                            ]);
++                            path.node.right = createLoader();
+                         }
+                     },
+                 },

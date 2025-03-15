@@ -4,6 +4,7 @@ import { packageUp } from 'package-up';
 import fixturify from 'fixturify';
 import stripAnsi from 'strip-ansi';
 import tmp from 'tmp';
+import { readFileSync, writeFileSync } from 'fs';
 
 export async function getCliPath(version) {
   const path = dirname(require.resolve(version));
@@ -25,7 +26,7 @@ export async function generateEmberApp(
   })`${cliPath} new test-app ${cliOptions}`;
   await execa({ cwd })`pnpm i`;
   if (packages?.length) {
-    await execa({ cwd })`pnpm i ${packages.join(' ')}`;
+    await execa({ cwd })`pnpm i --save-dev ${packages}`;
   }
 
   const fixture = fixturify.readSync('./tests/fixtures');
@@ -54,6 +55,17 @@ export async function runCodemod(cwd) {
     cwd,
     stdio: 'inherit',
   })`${updateScriptPath} --skip-git --skip-v2-addon`;
+
+  const packagePath = join(cwd, 'package.json');
+  const pkg = JSON.parse(readFileSync(packagePath, 'utf8'));
+
+  pkg.pnpm = {
+    patchedDependencies: {
+      '@embroider/compat': 'patches/@embroider__compat.patch',
+    },
+  };
+
+  writeFileSync(packagePath, JSON.stringify(pkg, null, 2));
 
   await execa({ cwd, stdio: 'inherit' })`pnpm i --no-frozen-lockfile`;
 }
@@ -90,9 +102,9 @@ export async function testWithTestem(cwd, expect, testemPort) {
 
 export const testVersions = [
   // ['ember-cli-3.28'],
-  // ['ember-cli-4.12'],
   // ['ember-cli-4.4'],
   // ['ember-cli-4.8'],
+  ['ember-cli-4.12', ['ember-data@^4.13.0-alpha.5', 'ember-inflector']], // ember-cli 4.13 is the earliest version that can support Vite, and needs ember-inflector installed
   // // test helpers seems to be broken for most ember versions 😭
   ['ember-cli-5.4', ['@ember/test-helpers@latest']],
   ['ember-cli-5.8', ['@ember/test-helpers@latest']],
