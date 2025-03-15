@@ -41,6 +41,17 @@ export async function testEmber(cwd, expect, testemPort) {
   console.log(stdout);
 
   expect(stdout).to.include('# fail  0');
+
+  await execa({ cwd, stdio: 'inherit' })`npm run build`;
+  let { stdout: stdoutProduction } = await execa({
+    cwd,
+    env: {
+      FORCE_BUILD_TESTS: true,
+    },
+  })`npm run test:ember -- --test-port=${testemPort} --environment=production`;
+  console.log(stdoutProduction);
+
+  expect(stdoutProduction).to.include('# fail  0');
 }
 
 export async function runCodemod(cwd) {
