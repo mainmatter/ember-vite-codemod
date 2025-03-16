@@ -34,7 +34,21 @@ export async function generateEmberApp(
 
 export async function testEmber(cwd, expect, testemPort) {
   console.log('🤖 testing ember app 🐹');
-  await execa({ cwd, stdio: 'inherit' })`npm run build`;
+  await execa({
+    cwd,
+    env: {
+      FORCE_BUILD_TESTS: true,
+      EMBER_CLI_TEST_COMMAND: true, // this forces ember-cli to build test config
+    },
+    stdio: 'inherit',
+  })`npm run build`;
+
+  let { stdout: stdoutProduction } = await execa({
+    cwd,
+  })`npm run test:ember -- --test-port=${testemPort} --path dist`;
+  console.log(stdoutProduction);
+
+  expect(stdoutProduction).to.include('# fail  0');
   let { stdout } = await execa({
     cwd,
   })`npm run test:ember -- --test-port=${testemPort}`;
