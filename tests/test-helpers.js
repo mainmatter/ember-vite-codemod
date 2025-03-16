@@ -127,7 +127,13 @@ export async function testWithTestem(cwd, expect, testemPort) {
 export const testVersions = [
   [
     'ember-cli-3.28',
-    ['ember-data@^5.3.0', 'ember-inflector', 'ember-cli@~4.12.0'],
+    [
+      'ember-data@^5.3.0',
+      'ember-inflector',
+      'ember-cli@~4.12.0',
+      'ember-auto-import@^2.0.0', // ember 3.28 came with ember-auto-import@1 which is too old
+      'webpack@^5.0.0', // ember-auto-import@2 needs webpack
+    ],
   ],
   [
     'ember-cli-4.4',
