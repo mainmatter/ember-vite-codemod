@@ -36,6 +36,11 @@ jobs:
           - standard
           - typescript
           - webpack
+        version:
+          - ember-cli-5.4
+          - ember-cli-5.8
+          - ember-cli-5.12
+          - ember-cli-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -45,4 +50,4 @@ jobs:
           node-version: 18
           cache: pnpm
       - run: pnpm i --frozen-lockfile
-      - run: pnpm run test tests/${{ matrix.file }}.test.js
+      - run: pnpm vitest -t ${{matrix.version}} tests/${{ matrix.file }}.test.js
