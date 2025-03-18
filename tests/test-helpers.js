@@ -105,7 +105,10 @@ export async function testWithTestem(cwd, expect, testemPort) {
 export const testVersions = [
   // ['ember-cli-3.28'],
   // ['ember-cli-4.4'],
-  // ['ember-cli-4.8'],
+  [
+    'ember-cli-4.8',
+    ['ember-data@^5.3.0', 'ember-inflector', 'ember-cli@~4.12.0'], // ember-cli 4.12 is the earliest version that will work
+  ],
   ['ember-cli-4.12', ['ember-data@^5.3.0', 'ember-inflector']], // ember-cli 5.3 is currently the earliest version that can support Vite, and needs ember-inflector installed
   // // test helpers seems to be broken for most ember versions 😭
   ['ember-cli-5.4', ['@ember/test-helpers@latest']],

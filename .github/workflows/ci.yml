@@ -37,6 +37,7 @@ jobs:
           - typescript
           - webpack
         version:
+          - ember-cli-4.8
           - ember-cli-4.12
           - ember-cli-5.4
           - ember-cli-5.8
