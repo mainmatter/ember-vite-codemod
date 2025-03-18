@@ -2,16 +2,24 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "0.8.0",
-      "newVersion": "0.9.0",
+      "oldVersion": "0.9.0",
+      "newVersion": "0.10.0",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-03-14)\n\nember-vite-codemod 0.9.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#24](https://github.com/mainmatter/ember-vite-codemod/pull/24) enable tests for Ember 5.4 ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2025-03-18)\n\nember-vite-codemod 0.10.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#63](https://github.com/mainmatter/ember-vite-codemod/pull/63) Remove `@embroider/webpack` + don't report `@embroider/macros` and `@embroider/util` ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n  * [#54](https://github.com/mainmatter/ember-vite-codemod/pull/54) enable testing for 4.8 ([@mansona](https://github.com/mansona))\n  * [#53](https://github.com/mainmatter/ember-vite-codemod/pull/53) enable testing for ember 4.12 ([@mansona](https://github.com/mansona))\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#52](https://github.com/mainmatter/ember-vite-codemod/pull/52) Throw error when modulePrefix does not match package.json#name ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `ember-vite-codemod`\n  * [#59](https://github.com/mainmatter/ember-vite-codemod/pull/59) split CI by ember version ([@mansona](https://github.com/mansona))\n  * [#57](https://github.com/mainmatter/ember-vite-codemod/pull/57) add a --environment=production test ([@mansona](https://github.com/mansona))\n\n#### Committers: 3\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }

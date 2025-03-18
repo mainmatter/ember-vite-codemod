@@ -1,5 +1,29 @@
 # Changelog
 
+## Release (2025-03-18)
+
+ember-vite-codemod 0.10.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#63](https://github.com/mainmatter/ember-vite-codemod/pull/63) Remove `@embroider/webpack` + don't report `@embroider/macros` and `@embroider/util` ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#54](https://github.com/mainmatter/ember-vite-codemod/pull/54) enable testing for 4.8 ([@mansona](https://github.com/mansona))
+  * [#53](https://github.com/mainmatter/ember-vite-codemod/pull/53) enable testing for ember 4.12 ([@mansona](https://github.com/mansona))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#52](https://github.com/mainmatter/ember-vite-codemod/pull/52) Throw error when modulePrefix does not match package.json#name ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#59](https://github.com/mainmatter/ember-vite-codemod/pull/59) split CI by ember version ([@mansona](https://github.com/mansona))
+  * [#57](https://github.com/mainmatter/ember-vite-codemod/pull/57) add a --environment=production test ([@mansona](https://github.com/mansona))
+
+#### Committers: 3
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-03-14)
 
 ember-vite-codemod 0.9.0 (minor)
