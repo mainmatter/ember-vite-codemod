@@ -104,7 +104,10 @@ export async function testWithTestem(cwd, expect, testemPort) {
 
 export const testVersions = [
   // ['ember-cli-3.28'],
-  // ['ember-cli-4.4'],
+  [
+    'ember-cli-4.4',
+    ['ember-data@^5.3.0', 'ember-inflector', 'ember-cli@~4.12.0'],
+  ],
   [
     'ember-cli-4.8',
     ['ember-data@^5.3.0', 'ember-inflector', 'ember-cli@~4.12.0'], // ember-cli 4.12 is the earliest version that will work
