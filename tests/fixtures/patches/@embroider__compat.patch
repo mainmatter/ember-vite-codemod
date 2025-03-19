@@ -1,0 +1,13 @@
+diff --git a/src/compat-adapters/ember-source.js b/src/compat-adapters/ember-source.js
+index 97a2bd921bc5ecb2c99ec1a5f270a02e7d953f8a..8a78a534b49334ae37d2f563c4e3d083d0f7a91e 100644
+--- a/src/compat-adapters/ember-source.js
++++ b/src/compat-adapters/ember-source.js
+@@ -215,6 +215,8 @@ class ReplaceRequire extends broccoli_plugin_1.default {
+                 },
+             };
+         });
++        replaceFile(this, '@ember/test/adapter.js', `import { Adapter } from 'ember-testing';
++      export default Adapter;`);
+         replaceFile(this, '@ember/test/index.js', `export let registerAsyncHelper;
+ export let registerHelper;
+ export let registerWaiter;

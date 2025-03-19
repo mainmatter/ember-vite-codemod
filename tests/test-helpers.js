@@ -4,6 +4,7 @@ import { packageUp } from 'package-up';
 import fixturify from 'fixturify';
 import stripAnsi from 'strip-ansi';
 import tmp from 'tmp';
+import { readFileSync, writeFileSync } from 'fs';
 
 export async function getCliPath(version) {
   const path = dirname(require.resolve(version));
@@ -57,6 +58,17 @@ export async function testEmber(cwd, expect, testemPort) {
   expect(stdout).to.include('# fail  0');
 }
 
+export async function applyPatches(cwd, patchedDependencies) {
+  const packagePath = join(cwd, 'package.json');
+  const pkg = JSON.parse(readFileSync(packagePath, 'utf8'));
+
+  pkg.pnpm = {
+    patchedDependencies,
+  };
+
+  writeFileSync(packagePath, JSON.stringify(pkg, null, 2));
+}
+
 export async function runCodemod(cwd) {
   console.log('🤖 running ember-vite-codemod 🐹');
   // ember-fetch is part of the classic app blueprint, but
@@ -68,6 +80,10 @@ export async function runCodemod(cwd) {
     cwd,
     stdio: 'inherit',
   })`${updateScriptPath} --skip-git --skip-v2-addon`;
+
+  await applyPatches(cwd, {
+    '@embroider/compat': 'patches/@embroider__compat.patch',
+  });
 
   await execa({ cwd, stdio: 'inherit' })`pnpm i --no-frozen-lockfile`;
 }
