@@ -1,5 +1,18 @@
 # Changelog
 
+## Release (2025-03-20)
+
+ember-vite-codemod 0.11.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#68](https://github.com/mainmatter/ember-vite-codemod/pull/68) bump minimum version of @embroider/compat ([@mansona](https://github.com/mansona))
+  * [#60](https://github.com/mainmatter/ember-vite-codemod/pull/60) Enable ember 3.28 ([@mansona](https://github.com/mansona))
+  * [#56](https://github.com/mainmatter/ember-vite-codemod/pull/56) enable testing for 4.4 ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-03-18)
 
 ember-vite-codemod 0.10.0 (minor)
