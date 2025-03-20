@@ -96,3 +96,6 @@ jobs:
           cache: pnpm
       - run: pnpm i --frozen-lockfile
       - run: pnpm vitest -t ${{matrix.version}} tests/${{ matrix.file }}.test.js
+        env:
+          TEST_TIMEOUT: "${{ matrix.os == 'windows-latest' && '1200000' || '' }}" # because windows is VERY slow :(
+
