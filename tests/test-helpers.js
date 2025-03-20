@@ -4,6 +4,7 @@ import { packageUp } from 'package-up';
 import fixturify from 'fixturify';
 import stripAnsi from 'strip-ansi';
 import tmp from 'tmp';
+import { readFileSync, writeFileSync } from 'fs';
 
 export async function getCliPath(version) {
   const path = dirname(require.resolve(version));
@@ -57,6 +58,17 @@ export async function testEmber(cwd, expect, testemPort) {
   expect(stdout).to.include('# fail  0');
 }
 
+export async function applyPatches(cwd, patchedDependencies) {
+  const packagePath = join(cwd, 'package.json');
+  const pkg = JSON.parse(readFileSync(packagePath, 'utf8'));
+
+  pkg.pnpm = {
+    patchedDependencies,
+  };
+
+  writeFileSync(packagePath, JSON.stringify(pkg, null, 2));
+}
+
 export async function runCodemod(cwd) {
   console.log('🤖 running ember-vite-codemod 🐹');
   // ember-fetch is part of the classic app blueprint, but
@@ -68,6 +80,16 @@ export async function runCodemod(cwd) {
     cwd,
     stdio: 'inherit',
   })`${updateScriptPath} --skip-git --skip-v2-addon`;
+
+  /**
+   * If you want to apply patches to Embroider this is a good place to do it, You can do it with the following kind of snippet:
+   *
+   * ```js
+   * await applyPatches(cwd, {
+   *  '@embroider/compat': 'patches/@embroider__compat.patch',
+   * });
+   * ```
+   */
 
   await execa({ cwd, stdio: 'inherit' })`pnpm i --no-frozen-lockfile`;
 }
@@ -104,7 +126,10 @@ export async function testWithTestem(cwd, expect, testemPort) {
 
 export const testVersions = [
   // ['ember-cli-3.28'],
-  // ['ember-cli-4.4'],
+  [
+    'ember-cli-4.4',
+    ['ember-data@^5.3.0', 'ember-inflector', 'ember-cli@~4.12.0'],
+  ],
   [
     'ember-cli-4.8',
     ['ember-data@^5.3.0', 'ember-inflector', 'ember-cli@~4.12.0'], // ember-cli 4.12 is the earliest version that will work
