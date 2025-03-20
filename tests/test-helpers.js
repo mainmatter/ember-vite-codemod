@@ -133,6 +133,7 @@ export const testVersions = [
       'ember-cli@~4.12.0',
       'ember-auto-import@^2.0.0', // ember 3.28 came with ember-auto-import@1 which is too old
       'webpack@^5.0.0', // ember-auto-import@2 needs webpack
+      'ember-welcome-page@^7.0.2', // we're importing from welcome page for the production test and we need the import location to be stable
     ],
   ],
   [
