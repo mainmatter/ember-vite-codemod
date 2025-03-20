@@ -81,9 +81,15 @@ export async function runCodemod(cwd) {
     stdio: 'inherit',
   })`${updateScriptPath} --skip-git --skip-v2-addon`;
 
-  await applyPatches(cwd, {
-    '@embroider/compat': 'patches/@embroider__compat.patch',
-  });
+  /**
+   * If you want to apply patches to Embroider this is a good place to do it, You can do it with the following kind of snippet:
+   *
+   * ```js
+   * await applyPatches(cwd, {
+   *  '@embroider/compat': 'patches/@embroider__compat.patch',
+   * });
+   * ```
+   */
 
   await execa({ cwd, stdio: 'inherit' })`pnpm i --no-frozen-lockfile`;
 }
