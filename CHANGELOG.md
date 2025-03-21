@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2025-03-21)
+
+ember-vite-codemod 0.12.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#70](https://github.com/mainmatter/ember-vite-codemod/pull/70) Feat/ Add ember-css-modules to unsupported deps ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#69](https://github.com/mainmatter/ember-vite-codemod/pull/69) Fix/ dependencies duplication ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 1
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2025-03-20)
 
 ember-vite-codemod 0.11.0 (minor)
