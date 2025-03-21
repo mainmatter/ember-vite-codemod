@@ -2,16 +2,20 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "0.10.0",
-      "newVersion": "0.11.0",
+      "oldVersion": "0.11.0",
+      "newVersion": "0.12.0",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-03-20)\n\nember-vite-codemod 0.11.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#68](https://github.com/mainmatter/ember-vite-codemod/pull/68) bump minimum version of @embroider/compat ([@mansona](https://github.com/mansona))\n  * [#60](https://github.com/mainmatter/ember-vite-codemod/pull/60) Enable ember 3.28 ([@mansona](https://github.com/mansona))\n  * [#56](https://github.com/mainmatter/ember-vite-codemod/pull/56) enable testing for 4.4 ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2025-03-21)\n\nember-vite-codemod 0.12.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#70](https://github.com/mainmatter/ember-vite-codemod/pull/70) Feat/ Add ember-css-modules to unsupported deps ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#69](https://github.com/mainmatter/ember-vite-codemod/pull/69) Fix/ dependencies duplication ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### Committers: 1\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n"
 }
