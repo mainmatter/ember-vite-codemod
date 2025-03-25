@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-03-25)
+
+ember-vite-codemod 0.13.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#74](https://github.com/mainmatter/ember-vite-codemod/pull/74) Fix/ in ensure-v2-addons, look for local package.json first ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 1
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2025-03-21)
 
 ember-vite-codemod 0.12.0 (minor)
