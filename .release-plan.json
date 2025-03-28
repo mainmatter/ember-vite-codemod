@@ -2,20 +2,16 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "0.11.0",
-      "newVersion": "0.12.0",
+      "oldVersion": "0.12.0",
+      "newVersion": "0.13.0",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-03-21)\n\nember-vite-codemod 0.12.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#70](https://github.com/mainmatter/ember-vite-codemod/pull/70) Feat/ Add ember-css-modules to unsupported deps ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#69](https://github.com/mainmatter/ember-vite-codemod/pull/69) Fix/ dependencies duplication ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### Committers: 1\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n"
+  "description": "## Release (2025-03-25)\n\nember-vite-codemod 0.13.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#74](https://github.com/mainmatter/ember-vite-codemod/pull/74) Fix/ in ensure-v2-addons, look for local package.json first ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### Committers: 1\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n"
 }
