@@ -1,5 +1,5 @@
 import { execaNode, execa } from 'execa';
-import { dirname, join } from 'path';
+import { dirname, join, resolve } from 'path';
 import { packageUp } from 'package-up';
 import fixturify from 'fixturify';
 import stripAnsi from 'strip-ansi';
@@ -75,7 +75,7 @@ export async function runCodemod(cwd) {
   // removing it is a prerequisite to running the codemod.
   await execa({ cwd })`pnpm uninstall ember-fetch`;
 
-  const updateScriptPath = join(__dirname, '../index.js');
+  const updateScriptPath = resolve(join(__dirname, '../index.js'));
   await execaNode({
     cwd,
     stdio: 'inherit',
