@@ -10,8 +10,9 @@ describe.concurrent('Test typescript blueprint on Ember', function () {
         expect,
         version,
         packages,
-        '--typescript --skip-npm --pnpm',
+        ['--typescript', '--skip-npm', '--pnpm'],
         getPort(),
+        true,
       );
     },
   );

@@ -163,6 +163,7 @@ export async function executeTest(
   packages,
   cliOptions,
   testemPort,
+  shouldRunLint,
 ) {
   let tmpobj = tmp.dirSync({ unsafeCleanup: true });
   const cwd = join(tmpobj.name, 'test-app');
@@ -173,4 +174,9 @@ export async function executeTest(
   await runCodemod(cwd);
   await testEmber(cwd, expect, testemPort);
   await testWithTestem(cwd, expect, testemPort);
+  if (shouldRunLint) {
+    console.log('running lint:types');
+    let result = await execa({ cwd })`pnpm lint:types`;
+    expect(result.exitCode, result.output).to.equal(0);
+  }
 }
