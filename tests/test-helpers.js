@@ -69,7 +69,7 @@ export async function applyPatches(cwd, patchedDependencies) {
   writeFileSync(packagePath, JSON.stringify(pkg, null, 2));
 }
 
-export async function runCodemod(cwd) {
+export async function runCodemod(cwd, codemodOptions) {
   console.log('🤖 running ember-vite-codemod 🐹');
   // ember-fetch is part of the classic app blueprint, but
   // removing it is a prerequisite to running the codemod.
@@ -79,7 +79,7 @@ export async function runCodemod(cwd) {
   await execaNode({
     cwd,
     stdio: 'inherit',
-  })`${updateScriptPath} --skip-git --skip-v2-addon`;
+  })`${updateScriptPath} ${codemodOptions}`;
 
   /**
    * If you want to apply patches to Embroider this is a good place to do it, You can do it with the following kind of snippet:
@@ -163,7 +163,7 @@ export async function executeTest(
   packages,
   cliOptions,
   testemPort,
-  shouldRunLint,
+  codemodOptions,
 ) {
   let tmpobj = tmp.dirSync({ unsafeCleanup: true });
   const cwd = join(tmpobj.name, 'test-app');
@@ -171,10 +171,10 @@ export async function executeTest(
 
   await generateEmberApp(tmpobj.name, version, packages, cliPath, cliOptions);
   await testEmber(cwd, expect, testemPort);
-  await runCodemod(cwd);
+  await runCodemod(cwd, codemodOptions);
   await testEmber(cwd, expect, testemPort);
   await testWithTestem(cwd, expect, testemPort);
-  if (shouldRunLint) {
+  if (codemodOptions.includes('--ts')) {
     console.log('running lint:types');
     let result = await execa({ cwd })`pnpm lint:types`;
     expect(result.exitCode, result.output).to.equal(0);

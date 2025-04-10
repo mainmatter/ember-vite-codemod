@@ -12,7 +12,7 @@ describe.concurrent('Test typescript blueprint on Ember', function () {
         packages,
         ['--typescript', '--skip-npm', '--pnpm'],
         getPort(),
-        true,
+        ['--skip-git', '--skip-v2-addon', '--ts'],
       );
     },
   );
