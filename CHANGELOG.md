@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-04-11)
+
+ember-vite-codemod 0.14.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#80](https://github.com/mainmatter/ember-vite-codemod/pull/80) Import missing `@embroider/core/types/virtual` when using --ts ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 1
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2025-03-25)
 
 ember-vite-codemod 0.13.0 (minor)
