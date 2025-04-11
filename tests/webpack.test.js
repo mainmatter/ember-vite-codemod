@@ -12,6 +12,7 @@ describe.concurrent('Test webpack blueprint on Ember', function () {
         packages,
         '--embroider --skip-npm --pnpm',
         getPort(),
+        ['--skip-git', '--skip-v2-addon', '--embroider-webpack'],
       );
     },
   );

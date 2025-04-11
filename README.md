@@ -2,6 +2,18 @@
 
 Migrate your Ember app to build with Vite.
 
+## Promise and compatibility
+
+This codemod does the minimum amount of changes in your Ember app to make it build with Vite. Its behavior is aligned with the app blueprint: it means that if you generate a new Classic Ember app with the app blueprint then run the codmod on it, the app will build correctly with Vite. This line we draw corresponds to what's tested by this codemod's CI:
+
+- Classic Ember apps: the codemod can be run on Ember apps >= 3.28
+
+- Embroider+Webpack apps: the codemod can be run on Ember apps >= 3.28
+
+- Apps using TypeScript: the codemod can be run on Ember apps >= 5.4 (It doesn't mean you can't have a TypeScript app building with Vite prior to 5.4, but the codemod currently doesn't do all the job to support this.)
+
+Depending on your app customization, the codemod may not be designed to perform all the steps to get your specific app building correctly with Vite, there could be additinal steps that you still need to manage yourself. You can use the present document to have a better overwiew of what the codemod is expected to do for you.
+
 ## Usage
 
 This codemod will add, move and modify files in your Ember app to make it build with Vite. Make sure your git repository is clean before running this command so you can easily compare the changes.
