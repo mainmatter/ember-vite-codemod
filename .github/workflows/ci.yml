@@ -45,7 +45,15 @@ jobs:
           - ember-cli-5.8
           - ember-cli-5.12
           - ember-cli-latest
-
+        exclude:
+          - file: typescript
+            version: ember-cli-3.28
+          - file: typescript
+            version: ember-cli-4.4
+          - file: typescript
+            version: ember-cli-4.8
+          - file: typescript
+            version: ember-cli-4.12
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
