@@ -59,10 +59,7 @@ await addMissingFiles({ projectType });
 await moveIndex();
 
 console.log('\nRunning code replacements...\n');
-await transformFiles({
-  isEmbroiderWebpack: options.embroiderWebpack,
-  showErrorTrace: options.errorTrace,
-});
+await transformFiles(options);
 await updatePackageJson();
 
 console.log('\nAll set! Re-install the app dependencies then run your linter');
