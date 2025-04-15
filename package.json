@@ -18,7 +18,8 @@
     "lint:format": "prettier . --cache --check",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "test": "vitest"
+    "test": "vitest",
+    "test:lib": "vitest lib/**/*.test.js"
   },
   "dependencies": {
     "@embroider/app-blueprint": "^0.23.0",
