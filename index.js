@@ -39,6 +39,12 @@ program
 program.parse();
 const options = program.opts();
 
+if (options.embroiderWebpack) {
+  console.warn(
+    '--embroider-webpack option ignored. The codemod now adapts automatically if @embroider/webpack is found.\n',
+  );
+}
+
 // Tasks order is important
 if (!options.skipGit) {
   await checkGitStatus();
@@ -61,6 +67,12 @@ console.log('\nCreating new required files...\n');
 const projectType = options.ts ? 'ts' : 'js';
 await addMissingFiles({ projectType });
 await moveIndex();
+
+// Add an automatic option when @embroider/webpack is detected
+const packageJSON = JSON.parse(await readFile('package.json', 'utf-8'));
+options.embroiderWebpack =
+  packageJSON['dependencies']?.['@embroider/webpack'] ||
+  packageJSON['devDependencies']?.['@embroider/webpack'];
 
 console.log('\nRunning code replacements...\n');
 await transformFiles(options);
