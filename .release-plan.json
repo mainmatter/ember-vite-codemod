@@ -2,8 +2,8 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "0.13.0",
-      "newVersion": "0.14.0",
+      "oldVersion": "0.14.0",
+      "newVersion": "0.15.0",
       "constraints": [
         {
           "impact": "minor",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-04-11)\n\nember-vite-codemod 0.14.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#80](https://github.com/mainmatter/ember-vite-codemod/pull/80) Import missing `@embroider/core/types/virtual` when using --ts ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### Committers: 1\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n"
+  "description": "## Release (2025-04-24)\n\nember-vite-codemod 0.15.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#89](https://github.com/mainmatter/ember-vite-codemod/pull/89) Detect `@embroider/webpack` automatically ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n  * [#88](https://github.com/mainmatter/ember-vite-codemod/pull/88) Don't report `ember-source` is available as v2 ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n  * [#85](https://github.com/mainmatter/ember-vite-codemod/pull/85) Pre-check Ember version before running transforms ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n  * [#83](https://github.com/mainmatter/ember-vite-codemod/pull/83) Required minimum version for optional packages ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### Committers: 1\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n"
 }
