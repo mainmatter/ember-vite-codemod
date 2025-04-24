@@ -1,5 +1,19 @@
 # Changelog
 
+## Release (2025-04-24)
+
+ember-vite-codemod 0.15.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#89](https://github.com/mainmatter/ember-vite-codemod/pull/89) Detect `@embroider/webpack` automatically ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#88](https://github.com/mainmatter/ember-vite-codemod/pull/88) Don't report `ember-source` is available as v2 ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#85](https://github.com/mainmatter/ember-vite-codemod/pull/85) Pre-check Ember version before running transforms ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#83](https://github.com/mainmatter/ember-vite-codemod/pull/83) Required minimum version for optional packages ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 1
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2025-04-11)
 
 ember-vite-codemod 0.14.0 (minor)
