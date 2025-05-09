@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-05-09)
+
+ember-vite-codemod 0.16.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#91](https://github.com/mainmatter/ember-vite-codemod/pull/91) update embroider dependencies to point at stable releases ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-04-24)
 
 ember-vite-codemod 0.15.0 (minor)
