@@ -12,7 +12,7 @@ This codemod does the minimum amount of changes in your Ember app to make it bui
 
 - Apps using TypeScript: the codemod can be run on Ember apps >= 5.4 (It doesn't mean you can't have a TypeScript app building with Vite prior to 5.4, but the codemod currently doesn't do all the job to support this.)
 
-Depending on your app customization, the codemod may not be designed to perform all the steps to get your specific app building correctly with Vite, there could be additinal steps that you still need to manage yourself. You can use the present document to have a better overwiew of what the codemod is expected to do for you.
+Depending on your app customization, the codemod may not be designed to perform all the steps to get your specific app building correctly with Vite, **[there could be additional steps](#common-out-of-scope-changes)** that you still need to manage yourself. You can use the present document to have a better overwiew of what the codemod is expected to do for you.
 
 ## Usage
 
@@ -262,8 +262,34 @@ The list of packages that are removed and added can be found in the codemod sour
 - [Packages the codemod adds](https://github.com/mainmatter/ember-vite-codemod/blob/main/lib/tasks/update-package-json.js#L18).
 - [Packages the codemod removes](https://github.com/mainmatter/ember-vite-codemod/blob/main/lib/tasks/update-package-json.js#L6).
 
+## Common out of scope changes
+
+This codemod focuses entirely on the minimum amount of code changes to make your Ember app build with Vite. It generally avoids touching the configuration of your app (even though there are common configuration changes when moving to Vite) because it doesn't want to make a wrong assumption about why you configured things this way.
+
+### Build options
+
+This codemod won't touch your build options. A common change when moving from `@embroider/webpack` to `@embroider/vite` is to remove build options like `staticEmberSource: true` because they are now true by default. However, it's not this codemod's job to tell whether the current options still make sense in the new Vite context; it's Embroider's job, and that's why Embroider warns you at build time if you can remove some of them. It's an expected follow-up action after running the codemod.
+
 ### Linter
 
-The codemod won't touch anything about your linter configuration, as the linter doesn't relate to how the app builds. Depending on the plugins you use, you may encounter issues to solve manually.
+The codemod won't touch anything about your linter configuration, as the linter doesn't relate to how the app builds. Depending on the plugins you use, you may encounter issues to solve manually. For instance, a common issue is that the codemod adds a dependency to `decorator-transforms` which is used in the new Babel config `babel.config.cjs`. If `'@babel/plugin-proposal-decorators'` was included in your `eslint.config.mjs`, then your linter will throw a parsing error "Cannot use the decorators and decorators-legacy plugin together", so you must adjust the ESLint config:
 
-For instance, the codemod adds a dependency to `decorator-transforms` which is used in the new Babel config `babel.config.cjs`. If `'@babel/plugin-proposal-decorators'` was included in your `eslint.config.mjs`, then your linter will throw a parsing error "Cannot use the decorators and decorators-legacy plugin together".
+```diff
+  const parserOptions = {
+    esm: {
+      js: {
+        ecmaFeatures: { modules: true },
+        ecmaVersion: 'latest',
+-       requireConfigFile: false,
+-       babelOptions: {
+-         plugins: [
+-           [
+-             '@babel/plugin-proposal-decorators',
+-             { decoratorsBeforeExport: true },
+-           ],
+-         ],
+-       },
+      },
+    },
+  }
+```
