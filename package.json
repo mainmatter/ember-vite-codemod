@@ -22,7 +22,7 @@
     "test:lib": "vitest lib/**/*.test.js"
   },
   "dependencies": {
-    "@embroider/app-blueprint": "^0.23.0",
+    "@ember/app-blueprint": "^0.8.1",
     "commander": "^13.1.0",
     "execa": "^9.5.2",
     "glob": "^11.0.3",
