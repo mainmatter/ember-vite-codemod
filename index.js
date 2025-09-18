@@ -12,6 +12,7 @@ import moveIndex from './lib/tasks/move-index.js';
 import transformFiles from './lib/tasks/transform-files.js';
 import updatePackageJson from './lib/tasks/update-package-json.js';
 import { checkModulePrefixMisMatch } from './lib/tasks/check-modulePrefix-mismatch.js';
+import { detectTypescript } from './lib/utils/detect-typescript.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
@@ -32,7 +33,11 @@ program
     'indicate the app to migrate uses @embroider/webpack to build',
     false,
   )
-  .option('--ts', 'indicate the app to migrate uses TypeScript', false)
+  .option(
+    '--ts',
+    'indicate the app to migrate uses TypeScript (default: true when TypeScript files are detected)',
+    detectTypescript(),
+  )
   .option('--error-trace', 'print the whole error trace when available', false)
   .version(pkg.version);
 
