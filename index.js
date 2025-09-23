@@ -49,7 +49,7 @@ program
   .version(pkg.version)
   .action((options) => {
     options.ts ??= !options.js && detectTypescript();
-    options.js ??= !options.ts && !detectTypescript();
+		delete options.js;
   });
 
 program.parse();
@@ -80,8 +80,7 @@ if (!options.skipV2Addon) {
 }
 
 console.log('\nCreating new required files...\n');
-const projectType = options.ts ? 'ts' : 'js';
-await addMissingFiles({ projectType });
+await addMissingFiles(options);
 await moveIndex();
 
 // Add an automatic option when @embroider/webpack is detected
