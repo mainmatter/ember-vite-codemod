@@ -42,14 +42,14 @@ program
   .addOption(
     new Option(
       '--js',
-      'indicate the app to migrate uses JavaScript (default: false when no TypeScript files are detected)',
+      'indicate the app to migrate uses JavaScript (default: true when no TypeScript files are detected)',
     ).conflicts('ts'),
   )
   .option('--error-trace', 'print the whole error trace when available', false)
   .version(pkg.version)
   .action((options) => {
     options.ts ??= !options.js && detectTypescript();
-		delete options.js;
+    delete options.js;
   });
 
 program.parse();
