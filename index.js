@@ -10,6 +10,7 @@ import ensureNoUnsupportedDeps from './lib/tasks/ensure-no-unsupported-deps.js';
 import ensureV2Addons from './lib/tasks/ensure-v2-addons.js';
 import moveIndex from './lib/tasks/move-index.js';
 import transformFiles from './lib/tasks/transform-files.js';
+import removeLingeringFiles from './lib/tasks/remove-lingering-files.js';
 import updatePackageJson from './lib/tasks/update-package-json.js';
 import { checkModulePrefixMisMatch } from './lib/tasks/check-modulePrefix-mismatch.js';
 import { detectTypescript } from './lib/utils/detect-typescript.js';
@@ -75,22 +76,27 @@ try {
 
   // Tasks order is important
   if (!options.skipGit) {
-    await run('Checking Git status', checkGitStatus);
+    await run('Checking Git status', checkGitStatus, options);
   }
 
-  await run('Checking modulePrefix', checkModulePrefixMisMatch);
-  await run('Checking for Ember version', ensureEmberCli);
-  await run('Checking for unsupported dependencies', ensureNoUnsupportedDeps);
+  await run('Checking modulePrefix', checkModulePrefixMisMatch, options);
+  await run('Checking for Ember version', ensureEmberCli, options);
+  await run(
+    'Checking for unsupported dependencies',
+    ensureNoUnsupportedDeps,
+    options,
+  );
 
   if (!options.skipV2Addon) {
     await run('Checking for v2 addons', ensureV2Addons, options);
   }
 
   await run('Creating new required files...', addMissingFiles, options);
-  await run('Moving index.html', moveIndex);
+  await run('Moving index.html', moveIndex, options);
 
   await run('Running code replacements...', transformFiles, options);
   await run('Updating package.json', updatePackageJson, options);
+  await run('Removing lingering files', removeLingeringFiles, options);
 
   console.log(
     '\nAll set! Re-install the app dependencies then run your linter',
