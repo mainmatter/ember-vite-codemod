@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { program } from 'commander';
+import { program, Option } from 'commander';
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -33,13 +33,24 @@ program
     'indicate the app to migrate uses @embroider/webpack to build',
     false,
   )
-  .option(
-    '--ts',
-    'indicate the app to migrate uses TypeScript (default: true when TypeScript files are detected)',
-    detectTypescript(),
+  .addOption(
+    new Option(
+      '--ts',
+      'indicate the app to migrate uses TypeScript (default: true when TypeScript files are detected)',
+    ).conflicts('js'),
+  )
+  .addOption(
+    new Option(
+      '--js',
+      'indicate the app to migrate uses JavaScript (default: false when no TypeScript files are detected)',
+    ).conflicts('ts'),
   )
   .option('--error-trace', 'print the whole error trace when available', false)
-  .version(pkg.version);
+  .version(pkg.version)
+  .action((options) => {
+    options.ts ??= !options.js && detectTypescript();
+    options.js ??= !options.ts && !detectTypescript();
+  });
 
 program.parse();
 const options = program.opts();
