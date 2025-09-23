@@ -16,6 +16,7 @@ import { detectTypescript } from './lib/utils/detect-typescript.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
+const appPkg = JSON.parse(await readFile('package.json', 'utf-8'));
 
 program
   .option(
@@ -47,19 +48,25 @@ program
   )
   .option('--error-trace', 'print the whole error trace when available', false)
   .version(pkg.version)
-  .action((options) => {
+  .action(async (options) => {
     options.ts ??= !options.js && detectTypescript();
     delete options.js;
+
+    if (options.embroiderWebpack) {
+      console.warn(
+        '--embroider-webpack option ignored. The codemod now adapts automatically if @embroider/webpack is found.\n',
+      );
+    }
+    // Add an automatic option when @embroider/webpack is detected
+    options.embroiderWebpack =
+      appPkg['dependencies']?.['@embroider/webpack'] ||
+      appPkg['devDependencies']?.['@embroider/webpack'] ||
+      false;
   });
 
-program.parse();
-const options = program.opts();
+await program.parseAsync();
 
-if (options.embroiderWebpack) {
-  console.warn(
-    '--embroider-webpack option ignored. The codemod now adapts automatically if @embroider/webpack is found.\n',
-  );
-}
+const options = program.opts();
 
 // Tasks order is important
 if (!options.skipGit) {
@@ -83,11 +90,6 @@ console.log('\nCreating new required files...\n');
 await addMissingFiles(options);
 await moveIndex();
 
-// Add an automatic option when @embroider/webpack is detected
-const packageJSON = JSON.parse(await readFile('package.json', 'utf-8'));
-options.embroiderWebpack =
-  packageJSON['dependencies']?.['@embroider/webpack'] ||
-  packageJSON['devDependencies']?.['@embroider/webpack'];
 
 console.log('\nRunning code replacements...\n');
 await transformFiles(options);
