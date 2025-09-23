@@ -90,7 +90,7 @@ try {
   await run('Moving index.html', moveIndex);
 
   await run('Running code replacements...', transformFiles, options);
-  await run('Updating package.json', updatePackageJson);
+  await run('Updating package.json', updatePackageJson, options);
 
   console.log(
     '\nAll set! Re-install the app dependencies then run your linter',
