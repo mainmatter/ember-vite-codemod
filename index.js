@@ -13,6 +13,8 @@ import transformFiles from './lib/tasks/transform-files.js';
 import updatePackageJson from './lib/tasks/update-package-json.js';
 import { checkModulePrefixMisMatch } from './lib/tasks/check-modulePrefix-mismatch.js';
 import { detectTypescript } from './lib/utils/detect-typescript.js';
+import { isExit } from './lib/utils/exit.js';
+import { run } from './lib/utils/run.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
@@ -68,31 +70,33 @@ await program.parseAsync();
 
 const options = program.opts();
 
-// Tasks order is important
-if (!options.skipGit) {
-  await checkGitStatus();
+try {
+  console.log(`\n🐹 Moving ${appPkg.name} to Vite\n`);
+
+  // Tasks order is important
+  if (!options.skipGit) {
+    await run('Checking Git status', checkGitStatus);
+  }
+
+  await run('Checking modulePrefix', checkModulePrefixMisMatch);
+  await run('Checking for Ember version', ensureEmberCli);
+  await run('Checking for unsupported dependencies', ensureNoUnsupportedDeps);
+
+  if (!options.skipV2Addon) {
+    await run('Checking for v2 addons', ensureV2Addons, options);
+  }
+
+  await run('Creating new required files...', addMissingFiles, options);
+  await run('Moving index.html', moveIndex);
+
+  await run('Running code replacements...', transformFiles, options);
+  await run('Updating package.json', updatePackageJson);
+
+  console.log(
+    '\nAll set! Re-install the app dependencies then run your linter',
+  );
+} catch (error) {
+  if (!isExit(error)) {
+    throw error;
+  }
 }
-
-await checkModulePrefixMisMatch();
-
-console.log('Checking for Ember version...\n');
-await ensureEmberCli();
-
-console.log('Checking for unsupported dependencies...\n');
-await ensureNoUnsupportedDeps();
-
-if (!options.skipV2Addon) {
-  console.log('\nChecking addons are v2...\n');
-  await ensureV2Addons(options);
-}
-
-console.log('\nCreating new required files...\n');
-await addMissingFiles(options);
-await moveIndex();
-
-
-console.log('\nRunning code replacements...\n');
-await transformFiles(options);
-await updatePackageJson();
-
-console.log('\nAll set! Re-install the app dependencies then run your linter');
