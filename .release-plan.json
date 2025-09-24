@@ -2,16 +2,28 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "0.15.0",
-      "newVersion": "0.16.0",
+      "oldVersion": "0.16.0",
+      "newVersion": "0.17.0",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :memo: Documentation"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-05-09)\n\nember-vite-codemod 0.16.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#91](https://github.com/mainmatter/ember-vite-codemod/pull/91) update embroider dependencies to point at stable releases ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-09-24)\n\nember-vite-codemod 0.17.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#100](https://github.com/mainmatter/ember-vite-codemod/pull/100) Improve console output ([@pichfl](https://github.com/pichfl))\n  * [#98](https://github.com/mainmatter/ember-vite-codemod/pull/98) Default to TypeScript if detected within the project ([@pichfl](https://github.com/pichfl))\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#101](https://github.com/mainmatter/ember-vite-codemod/pull/101) Add `@babel/plugin-transform-typescript` if `--ts` is enabled ([@pichfl](https://github.com/pichfl))\n\n#### :memo: Documentation\n* `ember-vite-codemod`\n  * [#93](https://github.com/mainmatter/ember-vite-codemod/pull/93) Docs/ more details about the common issues that our out of scope ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### :house: Internal\n* `ember-vite-codemod`\n  * [#95](https://github.com/mainmatter/ember-vite-codemod/pull/95) docs: issue template ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### Committers: 2\n- Florian Pichler ([@pichfl](https://github.com/pichfl))\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n"
 }
