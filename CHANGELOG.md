@@ -1,5 +1,30 @@
 # Changelog
 
+## Release (2025-09-24)
+
+ember-vite-codemod 0.17.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#100](https://github.com/mainmatter/ember-vite-codemod/pull/100) Improve console output ([@pichfl](https://github.com/pichfl))
+  * [#98](https://github.com/mainmatter/ember-vite-codemod/pull/98) Default to TypeScript if detected within the project ([@pichfl](https://github.com/pichfl))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#101](https://github.com/mainmatter/ember-vite-codemod/pull/101) Add `@babel/plugin-transform-typescript` if `--ts` is enabled ([@pichfl](https://github.com/pichfl))
+
+#### :memo: Documentation
+* `ember-vite-codemod`
+  * [#93](https://github.com/mainmatter/ember-vite-codemod/pull/93) Docs/ more details about the common issues that our out of scope ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#95](https://github.com/mainmatter/ember-vite-codemod/pull/95) docs: issue template ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 2
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2025-05-09)
 
 ember-vite-codemod 0.16.0 (minor)
