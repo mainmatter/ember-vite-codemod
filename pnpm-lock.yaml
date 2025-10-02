@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ember/app-blueprint':
-        specifier: ^0.8.1
-        version: 0.8.1
+        specifier: ^6.7.2
+        version: 6.7.2
       babel-remove-types:
         specifier: ^1.0.1
         version: 1.0.1
@@ -238,8 +238,8 @@ packages:
     engines: {node: '>=0.1.95'}
     hasBin: true
 
-  '@ember/app-blueprint@0.8.1':
-    resolution: {integrity: sha512-eKf622lVo+IEnf2STZYCezaY4GfrzxL/0kg9BK050G+2bPN9I7XIcbL+1/MJMSqsNp3u6qhir9W3r3IdZ6PWiw==}
+  '@ember/app-blueprint@6.7.2':
+    resolution: {integrity: sha512-p4HXE17YfJt5QIXTtlYdNozm6Cf2wUA9P24xD5E1Y4vgoCs7X5+XHyV58cNDJYM+qFcJ4jy8Dh0UrI1mF2M+0w==}
 
   '@esbuild/aix-ppc64@0.25.0':
     resolution: {integrity: sha512-O7vun9Sf8DFjH2UtqK8Ku3LkquL9SZL8OLY1T5NZkA34+wG3OQF7cl4Ql8vdNzM6fzBbYfLaiRLIOZ+2FOCgBQ==}
@@ -4953,7 +4953,7 @@ snapshots:
       exec-sh: 0.3.6
       minimist: 1.2.8
 
-  '@ember/app-blueprint@0.8.1':
+  '@ember/app-blueprint@6.7.2':
     dependencies:
       chalk: 4.1.2
       ember-cli-string-utils: 1.1.0
