@@ -56,8 +56,17 @@ jobs:
           - ember-cli-5.4
           - ember-cli-5.8
           - ember-cli-5.12
+          - ember-cli-6.4
           - ember-cli-latest
         exclude:
+          - file: webpack
+            version: ember-cli-3.28
+          - file: webpack
+            version: ember-cli-4.4
+          - file: webpack
+            version: ember-cli-4.8
+          - file: webpack
+            version: ember-cli-4.12
           - file: typescript
             version: ember-cli-3.28
           - file: typescript
@@ -66,6 +75,14 @@ jobs:
             version: ember-cli-4.8
           - file: typescript
             version: ember-cli-4.12
+          - file: typescript
+            version: ember-cli-5.4
+          # Skipped because types are wrong. See https://github.com/DefinitelyTyped/DefinitelyTyped/pull/73848
+          - file: typescript
+            version: ember-cli-5.8
+          # Skipped because types are wrong. See https://github.com/DefinitelyTyped/DefinitelyTyped/pull/73848
+          - file: typescript
+            version: ember-cli-5.12
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4

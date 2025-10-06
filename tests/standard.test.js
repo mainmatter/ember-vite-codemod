@@ -10,7 +10,7 @@ describe.concurrent('Test standard blueprint on Ember', function () {
         expect,
         version,
         packages,
-        '--skip-npm --pnpm',
+        ['--skip-npm', '--pnpm'],
         getPort(),
         ['--skip-git', '--skip-v2-addon'],
       );

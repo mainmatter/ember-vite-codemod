@@ -149,6 +149,7 @@ export const testVersions = [
   ['ember-cli-5.4', ['@ember/test-helpers@latest']],
   ['ember-cli-5.8', ['@ember/test-helpers@latest']],
   ['ember-cli-5.12', ['@ember/test-helpers@latest']],
+  ['ember-cli-6.4'],
   ['ember-cli-latest'],
 ];
 
