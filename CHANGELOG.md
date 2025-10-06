@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-10-06)
+
+ember-vite-codemod 1.0.0 (major)
+
+#### :boom: Breaking Change
+* `ember-vite-codemod`
+  * [#96](https://github.com/mainmatter/ember-vite-codemod/pull/96) start using the @ember/app-blueprint ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-09-24)
 
 ember-vite-codemod 0.17.0 (minor)
