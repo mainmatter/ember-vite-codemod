@@ -95,6 +95,11 @@ jobs:
           node-version: 18
           cache: pnpm
       - run: pnpm i --frozen-lockfile
+      - name: Set TEMP to D:/Temp on windows
+        if: ${{matrix.os}} == windows-latest
+        run: |
+          mkdir "D:\\Temp"
+          echo "TEMP=D:\\Temp" >> $env:GITHUB_ENV
       - run: pnpm vitest -t ${{matrix.version}} tests/${{ matrix.file }}.test.js
         env:
           TEST_TIMEOUT: "${{ matrix.os == 'windows-latest' && '1200000' || '' }}" # because windows is VERY slow :(
