@@ -1,17 +1,25 @@
 {
   "solution": {
     "ember-vite-codemod": {
-      "impact": "major",
-      "oldVersion": "0.17.0",
-      "newVersion": "1.0.0",
+      "impact": "minor",
+      "oldVersion": "1.0.0",
+      "newVersion": "1.1.0",
       "constraints": [
         {
-          "impact": "major",
-          "reason": "Appears in changelog section :boom: Breaking Change"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-10-06)\n\nember-vite-codemod 1.0.0 (major)\n\n#### :boom: Breaking Change\n* `ember-vite-codemod`\n  * [#96](https://github.com/mainmatter/ember-vite-codemod/pull/96) start using the @ember/app-blueprint ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2025-10-10)\n\nember-vite-codemod 1.1.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#106](https://github.com/mainmatter/ember-vite-codemod/pull/106) make sure we install the .env.development file from the blueprint ([@mansona](https://github.com/mansona))\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#67](https://github.com/mainmatter/ember-vite-codemod/pull/67) add some windows tests ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `ember-vite-codemod`\n  * [#104](https://github.com/mainmatter/ember-vite-codemod/pull/104) Remove workaround for missing @glimmer/component import ([@pichfl](https://github.com/pichfl))\n  * [#103](https://github.com/mainmatter/ember-vite-codemod/pull/103) Unskip TypeScript test runs ([@pichfl](https://github.com/pichfl))\n\n#### Committers: 2\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Florian Pichler ([@pichfl](https://github.com/pichfl))\n"
 }
