@@ -1,5 +1,26 @@
 # Changelog
 
+## Release (2025-10-10)
+
+ember-vite-codemod 1.1.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#106](https://github.com/mainmatter/ember-vite-codemod/pull/106) make sure we install the .env.development file from the blueprint ([@mansona](https://github.com/mansona))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#67](https://github.com/mainmatter/ember-vite-codemod/pull/67) add some windows tests ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#104](https://github.com/mainmatter/ember-vite-codemod/pull/104) Remove workaround for missing @glimmer/component import ([@pichfl](https://github.com/pichfl))
+  * [#103](https://github.com/mainmatter/ember-vite-codemod/pull/103) Unskip TypeScript test runs ([@pichfl](https://github.com/pichfl))
+
+#### Committers: 2
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+
 ## Release (2025-10-06)
 
 ember-vite-codemod 1.0.0 (major)
