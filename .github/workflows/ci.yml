@@ -39,7 +39,7 @@ jobs:
       - run: pnpm test:lib
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     timeout-minutes: 20
     strategy:
       fail-fast: false
@@ -58,6 +58,18 @@ jobs:
           - ember-cli-5.12
           - ember-cli-6.4
           - ember-cli-latest
+        os:
+          - ubuntu-latest
+        include:
+          - version: ember-cli-latest
+            os: windows-latest
+            file: standard
+          - version: ember-cli-latest
+            os: windows-latest
+            file: typescript
+          - version: ember-cli-latest
+            os: windows-latest
+            file: webpack
         exclude:
           - file: webpack
             version: ember-cli-3.28
@@ -83,4 +95,12 @@ jobs:
           node-version: 18
           cache: pnpm
       - run: pnpm i --frozen-lockfile
+      - name: Set TEMP to D:/Temp on windows
+        if: ${{matrix.os}} == windows-latest
+        run: |
+          mkdir "D:\\Temp"
+          echo "TEMP=D:\\Temp" >> $env:GITHUB_ENV
       - run: pnpm vitest -t ${{matrix.version}} tests/${{ matrix.file }}.test.js
+        env:
+          TEST_TIMEOUT: "${{ matrix.os == 'windows-latest' && '1200000' || '' }}" # because windows is VERY slow :(
+
