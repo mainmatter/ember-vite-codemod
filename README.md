@@ -2,6 +2,14 @@
 
 Migrate your Ember app to build with Vite.
 
+- [Promise and compatibility](#promise-and-compatibility)
+- [Usage](#usage)
+- [Steps](#steps)
+- [Common out of scope changes](#common-out-of-scope-changes)
+  - [Build options](#build-options)
+  - [Linter](#linter)
+  - [ember-exam](#ember-exam)
+
 ## Promise and compatibility
 
 This codemod does the minimum amount of changes in your Ember app to make it build with Vite. Its behavior is aligned with the app blueprint: it means that if you generate a new Classic Ember app with the app blueprint then run the codmod on it, the app will build correctly with Vite. This line we draw corresponds to what's tested by this codemod's CI:
@@ -293,3 +301,7 @@ The codemod won't touch anything about your linter configuration, as the linter 
     },
   }
 ```
+
+### ember-exam
+
+If your application relies on ember-exam, then the changes made by this codemod in your test infrastructure are not yet sufficient for everything to work. After you executed the codemod successfully, follow the documentation [How to use with Vite](https://github.com/ember-cli/ember-exam?tab=readme-ov-file#how-to-use-with-vite) in ember-exam README.md.
