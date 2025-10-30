@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2025-10-30)
+
+ember-vite-codemod 1.2.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#115](https://github.com/mainmatter/ember-vite-codemod/pull/115) Resolve actual dependency versions ([@ef4](https://github.com/ef4))
+
+#### :memo: Documentation
+* `ember-vite-codemod`
+  * [#116](https://github.com/mainmatter/ember-vite-codemod/pull/116) Fix formatting in README for Embroider and Webpack ([@ef4](https://github.com/ef4))
+
+#### Committers: 1
+- Edward Faulkner ([@ef4](https://github.com/ef4))
+
 ## Release (2025-10-10)
 
 ember-vite-codemod 1.1.0 (minor)
