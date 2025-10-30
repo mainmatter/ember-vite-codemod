@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@ember/app-blueprint": "^6.7.2",
+    "@embroider/shared-internals": "^3.0.1",
     "babel-remove-types": "^1.0.1",
     "commander": "^13.1.0",
     "execa": "^9.5.2",
