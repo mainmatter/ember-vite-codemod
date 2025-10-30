@@ -2,8 +2,8 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.1.0",
+      "oldVersion": "1.1.0",
+      "newVersion": "1.2.0",
       "constraints": [
         {
           "impact": "minor",
@@ -11,15 +11,11 @@
         },
         {
           "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Appears in changelog section :memo: Documentation"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-10-10)\n\nember-vite-codemod 1.1.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#106](https://github.com/mainmatter/ember-vite-codemod/pull/106) make sure we install the .env.development file from the blueprint ([@mansona](https://github.com/mansona))\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#67](https://github.com/mainmatter/ember-vite-codemod/pull/67) add some windows tests ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `ember-vite-codemod`\n  * [#104](https://github.com/mainmatter/ember-vite-codemod/pull/104) Remove workaround for missing @glimmer/component import ([@pichfl](https://github.com/pichfl))\n  * [#103](https://github.com/mainmatter/ember-vite-codemod/pull/103) Unskip TypeScript test runs ([@pichfl](https://github.com/pichfl))\n\n#### Committers: 2\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Florian Pichler ([@pichfl](https://github.com/pichfl))\n"
+  "description": "## Release (2025-10-30)\n\nember-vite-codemod 1.2.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#115](https://github.com/mainmatter/ember-vite-codemod/pull/115) Resolve actual dependency versions ([@ef4](https://github.com/ef4))\n\n#### :memo: Documentation\n* `ember-vite-codemod`\n  * [#116](https://github.com/mainmatter/ember-vite-codemod/pull/116) Fix formatting in README for Embroider and Webpack ([@ef4](https://github.com/ef4))\n\n#### Committers: 1\n- Edward Faulkner ([@ef4](https://github.com/ef4))\n"
 }
