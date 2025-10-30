@@ -8,7 +8,7 @@ This codemod does the minimum amount of changes in your Ember app to make it bui
 
 - Classic Ember apps: the codemod can be run on Ember apps >= 3.28
 
-- Embroider+Webpack apps: the codemod can be run on Ember apps >= 3.28
+- Embroider + Webpack apps: the codemod can be run on Ember apps >= 3.28
 
 - Apps using TypeScript: the codemod can be run on Ember apps >= 5.4 (It doesn't mean you can't have a TypeScript app building with Vite prior to 5.4, but the codemod currently doesn't do all the job to support this.)
 
