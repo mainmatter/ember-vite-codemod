@@ -25,7 +25,7 @@ program
   .option(
     '--skip-v2-addon',
     'pursue the execution even when an upgradable v1 addon is detected',
-    false,
+    true,
   )
   .option(
     '--skip-git',
