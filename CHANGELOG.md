@@ -1,5 +1,29 @@
 # Changelog
 
+## Release (2025-11-07)
+
+ember-vite-codemod 1.3.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#112](https://github.com/mainmatter/ember-vite-codemod/pull/112) Print all no unsupported deps ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#119](https://github.com/mainmatter/ember-vite-codemod/pull/119) Update test:ember script to match default blueprint ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :memo: Documentation
+* `ember-vite-codemod`
+  * [#110](https://github.com/mainmatter/ember-vite-codemod/pull/110) Docs/ Add a section for ember-exam in the README ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#109](https://github.com/mainmatter/ember-vite-codemod/pull/109) Add a unit test for add-missing-files ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 2
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-10-30)
 
 ember-vite-codemod 1.2.0 (minor)
