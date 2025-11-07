@@ -249,7 +249,7 @@ The codemod looks for the commands `build`, `start`, and `test:ember`, and rewri
 ```json
 "build": "vite build",
 "start": "vite",
-"test:ember": "vite build --mode test && ember test --path dist"
+"test:ember": "vite build --mode development && ember test --path dist"
 ```
 
 It will create the following fields with the following content:
