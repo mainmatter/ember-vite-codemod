@@ -39,8 +39,8 @@ program
   )
   .option(
     '--yarn-workspace',
-      'indicate the app is part of a Yarn workspace (monorepo)',
-      false
+    'indicate the app is part of a Yarn workspace (monorepo)',
+    false
   )
   .addOption(
     new Option(
