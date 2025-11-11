@@ -37,6 +37,11 @@ program
     'indicate the app to migrate uses @embroider/webpack to build',
     false,
   )
+  .option(
+    '--yarn-workspace',
+    'indicate the app is part of a Yarn workspace (monorepo)',
+    false
+  )
   .addOption(
     new Option(
       '--ts',
