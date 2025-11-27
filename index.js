@@ -5,7 +5,6 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import addMissingFiles from './lib/tasks/add-missing-files.js';
 import checkGitStatus from './lib/tasks/check-git-status.js';
-import ensureEmberCli from './lib/tasks/ensure-ember-cli.js';
 import ensureNoUnsupportedDeps from './lib/tasks/ensure-no-unsupported-deps.js';
 import ensureV2Addons from './lib/tasks/ensure-v2-addons.js';
 import moveIndex from './lib/tasks/move-index.js';
@@ -80,7 +79,6 @@ try {
   }
 
   await run('Checking modulePrefix', checkModulePrefixMisMatch, options);
-  await run('Checking for Ember version', ensureEmberCli, options);
   await run(
     'Checking for unsupported dependencies',
     ensureNoUnsupportedDeps,
