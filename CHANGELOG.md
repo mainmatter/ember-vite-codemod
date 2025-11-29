@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2025-11-29)
+
+ember-vite-codemod 1.4.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#124](https://github.com/mainmatter/ember-vite-codemod/pull/124) Merge `ensure-ember-cli` and `ensure-no-unsupported-deps` ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#126](https://github.com/mainmatter/ember-vite-codemod/pull/126) Reduce the size of the output for ensure-v2-addons ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#125](https://github.com/mainmatter/ember-vite-codemod/pull/125) Add `ember-cli-deprecation-workflow` to the list of v1 compatible addons ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 1
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2025-11-07)
 
 ember-vite-codemod 1.3.0 (minor)
