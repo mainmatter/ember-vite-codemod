@@ -36,6 +36,11 @@ program
     'indicate the app to migrate uses @embroider/webpack to build',
     false,
   )
+  .option(
+    '--non-interactive',
+    'never prompts the user, and executes only out of the options passed initially.',
+    false,
+  )
   .addOption(
     new Option(
       '--ts',

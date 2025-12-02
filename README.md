@@ -34,12 +34,13 @@ npx ember-vite-codemod@latest [options]
 
 ### options
 
-| Option          | Default | Description                                                                                                                                                                                                                                |
-| :-------------- | :-----: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| --skip-git      |  false  | By default, the process exits if the git repository is not clean. Use this option to execute the command anyway at your own risk.                                                                                                          |
-| --skip-v2-addon |  false  | By default, the process exits if it detects v1 addons you could update or remove before switching to Vite. Use this option to execute the rest of the codemod anyway and discover if Embroider can deal with your v1 addons without issue. |
-| --ts            |  false  | Use this option to indicate your app uses typescript. It will impact what files the codemod creates and the packages it installs.                                                                                                          |
-| --error-trace   |  false  | In case of error, use this option to print the full error trace when it's available.                                                                                                                                                       |
+| Option            | Default | Description                                                                                                                                                                                              |
+| :---------------- | :-----: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --skip-git        |  false  | By default, the process exits if the git repository is not clean. Use this option to execute the command anyway at your own risk.                                                                        |
+| --ts              |  false  | Use this option to indicate your app uses typescript. It will impact what files the codemod creates and the packages it installs.                                                                        |
+| --error-trace     |  false  | In case of error, use this option to print the full error trace when it's available.                                                                                                                     |
+| --non-interactive |  false  | The codemod never prompts you. It executes, completes or stops only out of the options you passed initially.                                                                                             |
+| --skip-v2-addon   |  false  | In non-interactive mode, the process exits if it detects v1 addons you could update before switching to Vite. Use this option to execute the rest of the codemod anyway and and pursue the move to Vite. |
 
 ## Steps
 
