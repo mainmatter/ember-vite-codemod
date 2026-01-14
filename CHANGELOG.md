@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-01-14)
+
+ember-vite-codemod 1.4.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#129](https://github.com/mainmatter/ember-vite-codemod/pull/129) stop adding the ember-addon metadata to package ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-11-29)
 
 ember-vite-codemod 1.4.0 (minor)
