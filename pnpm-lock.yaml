@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ember/app-blueprint':
-        specifier: ^6.7.2
-        version: 6.7.2
+        specifier: ^6.10.0
+        version: 6.10.3
       '@embroider/shared-internals':
         specifier: ^3.0.1
         version: 3.0.1
@@ -53,31 +53,31 @@ importers:
         version: 9.1.2
       ember-cli-3.28:
         specifier: npm:ember-cli@~3.28.0
-        version: ember-cli@3.28.6(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7)
+        version: ember-cli@3.28.6(ejs@3.1.10)(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-4.12:
         specifier: npm:ember-cli@~4.12.0
-        version: ember-cli@4.12.3(handlebars@4.7.8)(underscore@1.13.7)
+        version: ember-cli@4.12.3(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-4.4:
         specifier: npm:ember-cli@~4.4.0
-        version: ember-cli@4.4.1(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7)
+        version: ember-cli@4.4.1(ejs@3.1.10)(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-4.8:
         specifier: npm:ember-cli@~4.8.0
-        version: ember-cli@4.8.1(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7)
+        version: ember-cli@4.8.1(ejs@3.1.10)(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-5.12:
         specifier: npm:ember-cli@~5.12.0
-        version: ember-cli@5.12.0(handlebars@4.7.8)(underscore@1.13.7)
+        version: ember-cli@5.12.0(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-5.4:
         specifier: npm:ember-cli@~5.4.0
-        version: ember-cli@5.4.2(handlebars@4.7.8)(underscore@1.13.7)
+        version: ember-cli@5.4.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-5.8:
         specifier: npm:ember-cli@~5.8.0
-        version: ember-cli@5.8.1(handlebars@4.7.8)(underscore@1.13.7)
+        version: ember-cli@5.8.1(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-6.4:
         specifier: npm:ember-cli@~6.4.0
-        version: ember-cli@6.4.0(handlebars@4.7.8)(underscore@1.13.7)
+        version: ember-cli@6.4.0(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-latest:
         specifier: npm:ember-cli@latest
-        version: ember-cli@6.2.2(handlebars@4.7.8)(underscore@1.13.7)
+        version: ember-cli@6.2.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       eslint:
         specifier: ^9.20.1
         version: 9.20.1
@@ -247,8 +247,8 @@ packages:
     engines: {node: '>=0.1.95'}
     hasBin: true
 
-  '@ember/app-blueprint@6.7.2':
-    resolution: {integrity: sha512-p4HXE17YfJt5QIXTtlYdNozm6Cf2wUA9P24xD5E1Y4vgoCs7X5+XHyV58cNDJYM+qFcJ4jy8Dh0UrI1mF2M+0w==}
+  '@ember/app-blueprint@6.10.3':
+    resolution: {integrity: sha512-W/JJI9u2aDmX1Eef9WlpovY2luJoP8AHG5GqKWHsqtPCxKa3PhlzVRQDY3nRuuBYqA2fQFQYksffyalhWHCuDw==}
 
   '@embroider/shared-internals@3.0.1':
     resolution: {integrity: sha512-d7RQwDwqqHo7YvjE9t1rtIrCCYtbSoO0uRq2ikVhRh4hGS5OojZNu2ZtS0Wqrg+V72CRtMFr/hibTvHNsRM2Lg==}
@@ -1039,6 +1039,9 @@ packages:
   async@2.6.4:
     resolution: {integrity: sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==}
 
+  async@3.2.6:
+    resolution: {integrity: sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==}
+
   at-least-node@1.0.0:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
@@ -1821,6 +1824,10 @@ packages:
     resolution: {integrity: sha512-Mc7QhQ8s+cLrnUfU/Ji94vG/r8M26m8f++vyres4ZoojaRDpZ1eSIh/EpzLNwlWuvzSZ3UbDFspjFvTDXe6e/g==}
     engines: {node: '>=12.20'}
 
+  detect-indent@7.0.2:
+    resolution: {integrity: sha512-y+8xyqdGLL+6sh0tVeHcfP/QDd8gUgbasolJJpY7NgeQGSZ739bDtSiaiDgtoicy+mtYB81dKLxO9xRhCyIB3A==}
+    engines: {node: '>=12.20'}
+
   detect-newline@3.1.0:
     resolution: {integrity: sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==}
     engines: {node: '>=8'}
@@ -1858,6 +1865,11 @@ packages:
 
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
+
+  ejs@3.1.10:
+    resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
+    engines: {node: '>=0.10.0'}
+    hasBin: true
 
   electron-to-chromium@1.5.102:
     resolution: {integrity: sha512-eHhqaja8tE/FNpIiBrvBjFV/SSKpyWHLvxuR9dPTdo+3V9ppdLmFB7ZZQ98qNovcngPLYIz0oOBF9P0FfZef5Q==}
@@ -2196,6 +2208,15 @@ packages:
       picomatch:
         optional: true
 
+  fdir@6.5.0:
+    resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      picomatch: ^3 || ^4
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
+
   figures@2.0.0:
     resolution: {integrity: sha512-Oa2M9atig69ZkfwiApY8F2Yy+tzMbazyvqv21R0NsSC8floSOC09BbT1ITWAdoMGQvJ/aZnR1KMwdx9tvHnTNA==}
     engines: {node: '>=4'}
@@ -2211,6 +2232,9 @@ packages:
   file-entry-cache@8.0.0:
     resolution: {integrity: sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ==}
     engines: {node: '>=16.0.0'}
+
+  filelist@1.0.4:
+    resolution: {integrity: sha512-w1cEuf3S+DrLCQL7ET6kz+gmlJdbq9J7yXCSjK/OZCPA+qEN1WyF4ZAf0YYJa4/shHJra2t/d/r8SV4Ji+x+8Q==}
 
   filesize@10.1.6:
     resolution: {integrity: sha512-sJslQKU2uM33qH5nqewAwVB2QgR6w1aMNsYUp3aN5rMRyXEwJGmZvaWzeJFNTOXWlHQyBFCWrdj3fV/fsTOX8w==}
@@ -2429,6 +2453,9 @@ packages:
 
   git-hooks-list@3.2.0:
     resolution: {integrity: sha512-ZHG9a1gEhUMX1TvGrLdyWb9kDopCBbTnI8z4JgRMYxsijWipgjSEYoPWqBuIB0DnRnvqlQSEeVmzpeuPm7NdFQ==}
+
+  git-hooks-list@4.2.1:
+    resolution: {integrity: sha512-WNvqJjOxxs/8ZP9+DWdwWJ7cDsd60NHf39XnD82pDVrKO5q7xfPqpkK6hwEAmBa/ZSEE4IOoR75EzbbIuwGlMw==}
 
   git-repo-info@2.1.1:
     resolution: {integrity: sha512-8aCohiDo4jwjOwma4FmYFd3i97urZulL8XL24nIPxuE+GZnfsAyy/g2Shqx6OjUiFKUXZM+Yy+KHnOmmA3FVcg==}
@@ -2899,6 +2926,11 @@ packages:
   jackspeak@4.1.1:
     resolution: {integrity: sha512-zptv57P3GpL+O0I7VdMJNBZCu+BPHVQUk55Ft8/QCJjTVxrnJHuVuX/0Bl2A6/+2oyR/ZMEuFKwmzqqZ/U5nPQ==}
     engines: {node: 20 || >=22}
+
+  jake@10.9.4:
+    resolution: {integrity: sha512-wpHYzhxiVQL+IV05BLE2Xn34zW1S223hvjtqk0+gsPrwd/8JNLXJgZZM/iPFsYc1xyphF+6M6EvdE5E9MBGkDA==}
+    engines: {node: '>=10'}
+    hasBin: true
 
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
@@ -3706,6 +3738,10 @@ packages:
     resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
     engines: {node: '>=12'}
 
+  picomatch@4.0.3:
+    resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
+    engines: {node: '>=12'}
+
   pinkie-promise@2.0.1:
     resolution: {integrity: sha512-0Gni6D4UcLTbv9c57DfxDGdr41XfgUjqWZu492f0cIGr16zDU06BWP/RAEvOuo7CQ0CNjHaLlM59YJJFm3NWlw==}
     engines: {node: '>=0.10.0'}
@@ -4053,6 +4089,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.7.4:
+    resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   send@0.19.0:
     resolution: {integrity: sha512-dW41u5VfLXu8SJh5bwRmyYUbAoSB3c9uQh6L8h/KtsFREPWpbX1lrljJo186Jc4nmci/sGUZ9a0a0J2zgfq2hw==}
     engines: {node: '>= 0.8.0'}
@@ -4172,12 +4213,20 @@ packages:
   sort-object-keys@1.1.3:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
 
+  sort-object-keys@2.1.0:
+    resolution: {integrity: sha512-SOiEnthkJKPv2L6ec6HMwhUcN0/lppkeYuN1x63PbyPRrgSPIuBJCiYxYyvWRTtjMlOi14vQUCGUJqS6PLVm8g==}
+
   sort-package-json@1.57.0:
     resolution: {integrity: sha512-FYsjYn2dHTRb41wqnv+uEqCUvBpK3jZcTp9rbz2qDTmel7Pmdtf+i2rLaaPMRZeSVM60V3Se31GyWFpmKs4Q5Q==}
     hasBin: true
 
   sort-package-json@2.14.0:
     resolution: {integrity: sha512-xBRdmMjFB/KW3l51mP31dhlaiFmqkHLfWTfZAno8prb/wbDxwBPWFpxB16GZbiPbYr3wL41H8Kx22QIDWRe8WQ==}
+    hasBin: true
+
+  sort-package-json@3.6.1:
+    resolution: {integrity: sha512-Chgejw1+10p2D0U2tB7au1lHtz6TkFnxmvZktyBCRyV0GgmF6nl1IxXxAsPtJVsUyg/fo+BfCMAVVFUVRkAHrQ==}
+    engines: {node: '>=20'}
     hasBin: true
 
   source-map-js@1.2.1:
@@ -4396,6 +4445,10 @@ packages:
 
   tinyglobby@0.2.11:
     resolution: {integrity: sha512-32TmKeeKUahv0Go8WmQgiEp9Y21NuxjwjqiRC1nrUB51YacfSwuB44xgXD+HdIppmMRgjQNPdrHyA6vIybYZ+g==}
+    engines: {node: '>=12.0.0'}
+
+  tinyglobby@0.2.15:
+    resolution: {integrity: sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==}
     engines: {node: '>=12.0.0'}
 
   tinypool@1.0.2:
@@ -5040,11 +5093,13 @@ snapshots:
       exec-sh: 0.3.6
       minimist: 1.2.8
 
-  '@ember/app-blueprint@6.7.2':
+  '@ember/app-blueprint@6.10.3':
     dependencies:
       chalk: 4.1.2
+      ejs: 3.1.10
       ember-cli-string-utils: 1.1.0
       lodash: 4.17.21
+      sort-package-json: 3.6.1
       walk-sync: 3.0.0
 
   '@embroider/shared-internals@3.0.1':
@@ -5763,6 +5818,8 @@ snapshots:
   async@2.6.4:
     dependencies:
       lodash: 4.17.21
+
+  async@3.2.6: {}
 
   at-least-node@1.0.0: {}
 
@@ -6486,10 +6543,11 @@ snapshots:
       ora: 3.4.0
       through2: 3.0.2
 
-  consolidate@0.16.0(handlebars@4.7.8)(lodash@4.17.21)(mustache@4.2.0)(underscore@1.13.7):
+  consolidate@0.16.0(ejs@3.1.10)(handlebars@4.7.8)(lodash@4.17.21)(mustache@4.2.0)(underscore@1.13.7):
     dependencies:
       bluebird: 3.7.2
     optionalDependencies:
+      ejs: 3.1.10
       handlebars: 4.7.8
       lodash: 4.17.21
       mustache: 4.2.0
@@ -6611,6 +6669,8 @@ snapshots:
 
   detect-indent@7.0.1: {}
 
+  detect-indent@7.0.2: {}
+
   detect-newline@3.1.0: {}
 
   detect-newline@4.0.1: {}
@@ -6638,6 +6698,10 @@ snapshots:
   editions@1.3.4: {}
 
   ee-first@1.1.1: {}
+
+  ejs@3.1.10:
+    dependencies:
+      jake: 10.9.4
 
   electron-to-chromium@1.5.102: {}
 
@@ -6669,7 +6733,7 @@ snapshots:
 
   ember-cli-string-utils@1.1.0: {}
 
-  ember-cli@3.28.6(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@3.28.6(ejs@3.1.10)(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@babel/core': 7.26.9
       '@babel/plugin-transform-modules-amd': 7.25.9(@babel/core@7.26.9)
@@ -6754,7 +6818,7 @@ snapshots:
       sort-package-json: 1.57.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.15.2(handlebars@4.7.8)(underscore@1.13.7)
+      testem: 3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       uuid: 8.3.2
@@ -6820,7 +6884,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-cli@4.12.3(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@4.12.3(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@babel/core': 7.26.9
       '@babel/plugin-transform-modules-amd': 7.25.9(@babel/core@7.26.9)
@@ -6907,7 +6971,7 @@ snapshots:
       sort-package-json: 1.57.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.15.2(handlebars@4.7.8)(underscore@1.13.7)
+      testem: 3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       uuid: 9.0.1
@@ -6972,7 +7036,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-cli@4.4.1(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@4.4.1(ejs@3.1.10)(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@babel/core': 7.26.9
       '@babel/plugin-transform-modules-amd': 7.25.9(@babel/core@7.26.9)
@@ -7058,7 +7122,7 @@ snapshots:
       sort-package-json: 1.57.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.15.2(handlebars@4.7.8)(underscore@1.13.7)
+      testem: 3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       uuid: 8.3.2
@@ -7124,7 +7188,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-cli@4.8.1(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@4.8.1(ejs@3.1.10)(encoding@0.1.13)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@babel/core': 7.26.9
       '@babel/plugin-transform-modules-amd': 7.25.9(@babel/core@7.26.9)
@@ -7210,7 +7274,7 @@ snapshots:
       sort-package-json: 1.57.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.15.2(handlebars@4.7.8)(underscore@1.13.7)
+      testem: 3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       uuid: 8.3.2
@@ -7276,7 +7340,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-cli@5.12.0(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@5.12.0(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@pnpm/find-workspace-dir': 6.0.3
       broccoli: 3.5.2
@@ -7355,7 +7419,7 @@ snapshots:
       sort-package-json: 1.57.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.15.2(handlebars@4.7.8)(underscore@1.13.7)
+      testem: 3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       walk-sync: 3.0.0
@@ -7419,7 +7483,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-cli@5.4.2(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@5.4.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@pnpm/find-workspace-dir': 6.0.3
       broccoli: 3.5.2
@@ -7497,7 +7561,7 @@ snapshots:
       sort-package-json: 1.57.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.15.2(handlebars@4.7.8)(underscore@1.13.7)
+      testem: 3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       walk-sync: 3.0.0
@@ -7561,7 +7625,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-cli@5.8.1(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@5.8.1(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@pnpm/find-workspace-dir': 6.0.3
       broccoli: 3.5.2
@@ -7640,7 +7704,7 @@ snapshots:
       sort-package-json: 1.57.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.15.2(handlebars@4.7.8)(underscore@1.13.7)
+      testem: 3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       walk-sync: 3.0.0
@@ -7704,7 +7768,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-cli@6.2.2(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@6.2.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@pnpm/find-workspace-dir': 7.0.3
       babel-remove-types: 1.0.1
@@ -7782,7 +7846,7 @@ snapshots:
       sort-package-json: 2.14.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.15.2(handlebars@4.7.8)(underscore@1.13.7)
+      testem: 3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       walk-sync: 3.0.0
@@ -7846,7 +7910,7 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-cli@6.4.0(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@6.4.0(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@pnpm/find-workspace-dir': 1000.1.3
       babel-remove-types: 1.0.1
@@ -7923,7 +7987,7 @@ snapshots:
       sort-package-json: 2.14.0
       symlink-or-copy: 1.3.1
       temp: 0.9.4
-      testem: 3.15.2(handlebars@4.7.8)(underscore@1.13.7)
+      testem: 3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7)
       tiny-lr: 2.0.0
       tree-sync: 2.1.0
       walk-sync: 3.0.0
@@ -8363,6 +8427,10 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.2
 
+  fdir@6.5.0(picomatch@4.0.3):
+    optionalDependencies:
+      picomatch: 4.0.3
+
   figures@2.0.0:
     dependencies:
       escape-string-regexp: 1.0.5
@@ -8378,6 +8446,10 @@ snapshots:
   file-entry-cache@8.0.0:
     dependencies:
       flat-cache: 4.0.1
+
+  filelist@1.0.4:
+    dependencies:
+      minimatch: 5.1.6
 
   filesize@10.1.6: {}
 
@@ -8658,6 +8730,8 @@ snapshots:
   git-hooks-list@1.0.3: {}
 
   git-hooks-list@3.2.0: {}
+
+  git-hooks-list@4.2.1: {}
 
   git-repo-info@2.1.1: {}
 
@@ -9168,6 +9242,12 @@ snapshots:
   jackspeak@4.1.1:
     dependencies:
       '@isaacs/cliui': 8.0.2
+
+  jake@10.9.4:
+    dependencies:
+      async: 3.2.6
+      filelist: 1.0.4
+      picocolors: 1.1.1
 
   jju@1.4.0: {}
 
@@ -10003,6 +10083,8 @@ snapshots:
 
   picomatch@4.0.2: {}
 
+  picomatch@4.0.3: {}
+
   pinkie-promise@2.0.1:
     dependencies:
       pinkie: 2.0.4
@@ -10363,6 +10445,8 @@ snapshots:
 
   semver@7.7.1: {}
 
+  semver@7.7.4: {}
+
   send@0.19.0:
     dependencies:
       debug: 2.6.9
@@ -10540,6 +10624,8 @@ snapshots:
 
   sort-object-keys@1.1.3: {}
 
+  sort-object-keys@2.1.0: {}
+
   sort-package-json@1.57.0:
     dependencies:
       detect-indent: 6.1.0
@@ -10559,6 +10645,16 @@ snapshots:
       semver: 7.7.1
       sort-object-keys: 1.1.3
       tinyglobby: 0.2.11
+
+  sort-package-json@3.6.1:
+    dependencies:
+      detect-indent: 7.0.2
+      detect-newline: 4.0.1
+      git-hooks-list: 4.2.1
+      is-plain-obj: 4.1.0
+      semver: 7.7.4
+      sort-object-keys: 2.1.0
+      tinyglobby: 0.2.15
 
   source-map-js@1.2.1: {}
 
@@ -10732,7 +10828,7 @@ snapshots:
       mkdirp: 0.5.6
       rimraf: 2.6.3
 
-  testem@3.15.2(handlebars@4.7.8)(underscore@1.13.7):
+  testem@3.15.2(ejs@3.1.10)(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@xmldom/xmldom': 0.8.10
       backbone: 1.6.0
@@ -10740,7 +10836,7 @@ snapshots:
       charm: 1.0.2
       commander: 2.20.3
       compression: 1.8.0
-      consolidate: 0.16.0(handlebars@4.7.8)(lodash@4.17.21)(mustache@4.2.0)(underscore@1.13.7)
+      consolidate: 0.16.0(ejs@3.1.10)(handlebars@4.7.8)(lodash@4.17.21)(mustache@4.2.0)(underscore@1.13.7)
       execa: 1.0.0
       express: 4.21.2
       fireworm: 0.7.2
@@ -10854,6 +10950,11 @@ snapshots:
     dependencies:
       fdir: 6.4.3(picomatch@4.0.2)
       picomatch: 4.0.2
+
+  tinyglobby@0.2.15:
+    dependencies:
+      fdir: 6.5.0(picomatch@4.0.3)
+      picomatch: 4.0.3
 
   tinypool@1.0.2: {}
 
