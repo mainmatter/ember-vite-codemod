@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-02-19)
+
+ember-vite-codemod 1.5.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#136](https://github.com/mainmatter/ember-vite-codemod/pull/136) get versions for PACKAGES_TO_ADD from blueprint ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2026-01-14)
 
 ember-vite-codemod 1.4.1 (patch)
