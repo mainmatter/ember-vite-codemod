@@ -1,17 +1,17 @@
 {
   "solution": {
     "ember-vite-codemod": {
-      "impact": "patch",
-      "oldVersion": "1.4.0",
-      "newVersion": "1.4.1",
+      "impact": "minor",
+      "oldVersion": "1.4.1",
+      "newVersion": "1.5.0",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-01-14)\n\nember-vite-codemod 1.4.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#129](https://github.com/mainmatter/ember-vite-codemod/pull/129) stop adding the ember-addon metadata to package ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2026-02-19)\n\nember-vite-codemod 1.5.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#136](https://github.com/mainmatter/ember-vite-codemod/pull/136) get versions for PACKAGES_TO_ADD from blueprint ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
