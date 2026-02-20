@@ -2,16 +2,21 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "1.5.0",
-      "newVersion": "1.6.0",
+      "oldVersion": "1.4.1",
+      "newVersion": "1.5.0",
+      "tagName": "latest",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-02-20)\n\nember-vite-codemod 1.6.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#135](https://github.com/mainmatter/ember-vite-codemod/pull/135) Update path to app blueprint's babel config (changed in 6.10) ([@fdeters](https://github.com/fdeters))\n\n#### Committers: 1\n- Forrest Deters ([@fdeters](https://github.com/fdeters))\n"
+  "description": "## Release (2026-02-20)\n\n* ember-vite-codemod 1.5.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#135](https://github.com/mainmatter/ember-vite-codemod/pull/135) Update path to app blueprint's babel config (changed in 6.10) ([@fdeters](https://github.com/fdeters))\n  * [#136](https://github.com/mainmatter/ember-vite-codemod/pull/136) get versions for PACKAGES_TO_ADD from blueprint ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `ember-vite-codemod`\n  * [#143](https://github.com/mainmatter/ember-vite-codemod/pull/143) reset version ([@mansona](https://github.com/mansona))\n  * [#141](https://github.com/mainmatter/ember-vite-codemod/pull/141) update release-plan to support OIDC ([@mansona](https://github.com/mansona))\n\n#### Committers: 2\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Forrest Deters ([@fdeters](https://github.com/fdeters))\n"
 }
