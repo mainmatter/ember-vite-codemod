@@ -2,8 +2,8 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "1.4.1",
-      "newVersion": "1.5.0",
+      "oldVersion": "1.5.0",
+      "newVersion": "1.6.0",
       "constraints": [
         {
           "impact": "minor",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-02-19)\n\nember-vite-codemod 1.5.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#136](https://github.com/mainmatter/ember-vite-codemod/pull/136) get versions for PACKAGES_TO_ADD from blueprint ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2026-02-20)\n\nember-vite-codemod 1.6.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#135](https://github.com/mainmatter/ember-vite-codemod/pull/135) Update path to app blueprint's babel config (changed in 6.10) ([@fdeters](https://github.com/fdeters))\n\n#### Committers: 1\n- Forrest Deters ([@fdeters](https://github.com/fdeters))\n"
 }

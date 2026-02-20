@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-02-20)
+
+ember-vite-codemod 1.6.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#135](https://github.com/mainmatter/ember-vite-codemod/pull/135) Update path to app blueprint's babel config (changed in 6.10) ([@fdeters](https://github.com/fdeters))
+
+#### Committers: 1
+- Forrest Deters ([@fdeters](https://github.com/fdeters))
+
 ## Release (2026-02-19)
 
 ember-vite-codemod 1.5.0 (minor)
