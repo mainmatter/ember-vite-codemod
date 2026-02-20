@@ -32,6 +32,8 @@ In your Ember app folder, execute:
 npx ember-vite-codemod@latest [options]
 ```
 
+After running the codemod, remove `node_modules` and `dist` within your project's directory. Run `npm install`. Run lints. You may have to modify your eslint config: compare it with the [eslint config from Ember 6.8 (where vite became default)](https://github.com/ember-cli/ember-new-output/blob/v6.8.0/eslint.config.mjs). Run the `start` script and test your project. 
+
 ### options
 
 | Option          | Default | Description                                                                                                                                                                                                                                |
