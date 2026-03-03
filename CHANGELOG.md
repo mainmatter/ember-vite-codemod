@@ -1,5 +1,30 @@
 # Changelog
 
+## Release (2026-03-03)
+
+* ember-vite-codemod 1.6.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#151](https://github.com/mainmatter/ember-vite-codemod/pull/151) automatically add @embroider/legacy-inspector-support to app.js ([@mansona](https://github.com/mansona))
+  * [#150](https://github.com/mainmatter/ember-vite-codemod/pull/150) Add support for transforming test-helper with basic ember-exam setup present ([@nickschot](https://github.com/nickschot))
+  * [#149](https://github.com/mainmatter/ember-vite-codemod/pull/149) add call to setupEmberOnerrorValidation() when it is missing ([@nickschot](https://github.com/nickschot))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#152](https://github.com/mainmatter/ember-vite-codemod/pull/152) fix running codemod multiple times ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#148](https://github.com/mainmatter/ember-vite-codemod/pull/148) pass options to transforms functions as an object ([@mansona](https://github.com/mansona))
+  * [#146](https://github.com/mainmatter/ember-vite-codemod/pull/146) add a transform test for app.js ([@mansona](https://github.com/mansona))
+  * [#147](https://github.com/mainmatter/ember-vite-codemod/pull/147) Add basic transform test for test-helper transform ([@nickschot](https://github.com/nickschot))
+  * [#144](https://github.com/mainmatter/ember-vite-codemod/pull/144) simplify ember-cli-build transform unit test ([@mansona](https://github.com/mansona))
+
+#### Committers: 2
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
 ## Release (2026-02-20)
 
 * ember-vite-codemod 1.5.0 (minor)
