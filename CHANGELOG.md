@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-03-19)
+
+* ember-vite-codemod 1.6.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#153](https://github.com/mainmatter/ember-vite-codemod/pull/153) Modify test-helper transform to add support for the alternative `import start from 'ember-exam/test-support/start'` ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 1
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
 ## Release (2026-03-03)
 
 * ember-vite-codemod 1.6.0 (minor)
