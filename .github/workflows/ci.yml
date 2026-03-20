@@ -6,6 +6,10 @@ on:
       - main
       - master
   pull_request: {}
+  schedule:
+    # Run daily at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 concurrency:
   group: ci-${{ github.head_ref || github.ref }}
@@ -16,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 18
           cache: pnpm
@@ -29,9 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 18
           cache: pnpm
@@ -88,19 +92,36 @@ jobs:
           - file: typescript
             version: ember-cli-4.12
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 18
           cache: pnpm
       - run: pnpm i --frozen-lockfile
       - name: Set TEMP to D:/Temp on windows
-        if: ${{matrix.os}} == windows-latest
+        if: ${{ matrix.os == 'windows-latest' }}
         run: |
           mkdir "D:\\Temp"
           echo "TEMP=D:\\Temp" >> $env:GITHUB_ENV
       - run: pnpm vitest -t ${{matrix.version}} tests/${{ matrix.file }}.test.js
         env:
           TEST_TIMEOUT: "${{ matrix.os == 'windows-latest' && '1200000' || '' }}" # because windows is VERY slow :(
+
+  notify:
+    name: Notify Discord
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    needs: [lint, test-lib, test]
+    if: failure() && github.event_name == 'schedule'
+    steps:
+      - uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: "Failure"
+          title: "Ember Vite Codemod Nightly CI Check"
+          color: 0xcc0000
+          url: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          username: GitHub Actions
 
