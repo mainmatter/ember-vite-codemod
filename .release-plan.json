@@ -1,18 +1,26 @@
 {
   "solution": {
     "ember-vite-codemod": {
-      "impact": "patch",
-      "oldVersion": "1.6.0",
-      "newVersion": "1.6.1",
+      "impact": "minor",
+      "oldVersion": "1.6.1",
+      "newVersion": "1.7.0",
       "tagName": "latest",
       "constraints": [
         {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-03-19)\n\n* ember-vite-codemod 1.6.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#153](https://github.com/mainmatter/ember-vite-codemod/pull/153) Modify test-helper transform to add support for the alternative `import start from 'ember-exam/test-support/start'` ([@nickschot](https://github.com/nickschot))\n\n#### Committers: 1\n- Nick Schot ([@nickschot](https://github.com/nickschot))\n"
+  "description": "## Release (2026-04-24)\n\n* ember-vite-codemod 1.7.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#155](https://github.com/mainmatter/ember-vite-codemod/pull/155) fix TypeScript parsing of files using recast ([@mansona](https://github.com/mansona))\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#156](https://github.com/mainmatter/ember-vite-codemod/pull/156) update node to 20.19+ in CI to fix require(esm) ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `ember-vite-codemod`\n  * [#158](https://github.com/mainmatter/ember-vite-codemod/pull/158) update release-plan ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
