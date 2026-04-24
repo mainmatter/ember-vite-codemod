@@ -1,5 +1,24 @@
 # Changelog
 
+## Release (2026-04-24)
+
+* ember-vite-codemod 1.7.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#155](https://github.com/mainmatter/ember-vite-codemod/pull/155) fix TypeScript parsing of files using recast ([@mansona](https://github.com/mansona))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#156](https://github.com/mainmatter/ember-vite-codemod/pull/156) update node to 20.19+ in CI to fix require(esm) ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#158](https://github.com/mainmatter/ember-vite-codemod/pull/158) update release-plan ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2026-03-19)
 
 * ember-vite-codemod 1.6.1 (patch)
