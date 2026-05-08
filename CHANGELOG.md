@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-05-08)
+
+* ember-vite-codemod 1.8.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#159](https://github.com/mainmatter/ember-vite-codemod/pull/159) update @ember/app-blueprint ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2026-04-24)
 
 * ember-vite-codemod 1.7.0 (minor)
