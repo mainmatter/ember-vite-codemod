@@ -12,8 +12,8 @@ importers:
         specifier: ^7.29.2
         version: 7.29.2
       '@ember/app-blueprint':
-        specifier: ^6.10.0
-        version: 6.10.3
+        specifier: ^6.12.3
+        version: 6.12.3
       '@embroider/shared-internals':
         specifier: ^3.0.1
         version: 3.0.1
@@ -262,8 +262,8 @@ packages:
     engines: {node: '>=0.1.95'}
     hasBin: true
 
-  '@ember/app-blueprint@6.10.3':
-    resolution: {integrity: sha512-W/JJI9u2aDmX1Eef9WlpovY2luJoP8AHG5GqKWHsqtPCxKa3PhlzVRQDY3nRuuBYqA2fQFQYksffyalhWHCuDw==}
+  '@ember/app-blueprint@6.12.3':
+    resolution: {integrity: sha512-Bf950zkgbKn6/pMunLTk/mkqInHU8CaNTvjR/umX1CjUNFRPTZPQb19OhstlBYTl+99jUN3feZ0xfuOt1t6c7A==}
 
   '@embroider/shared-internals@3.0.1':
     resolution: {integrity: sha512-d7RQwDwqqHo7YvjE9t1rtIrCCYtbSoO0uRq2ikVhRh4hGS5OojZNu2ZtS0Wqrg+V72CRtMFr/hibTvHNsRM2Lg==}
@@ -5123,7 +5123,7 @@ snapshots:
       exec-sh: 0.3.6
       minimist: 1.2.8
 
-  '@ember/app-blueprint@6.10.3':
+  '@ember/app-blueprint@6.12.3':
     dependencies:
       chalk: 4.1.2
       ejs: 3.1.10
@@ -6286,7 +6286,7 @@ snapshots:
 
   builtins@5.1.0:
     dependencies:
-      semver: 7.7.1
+      semver: 7.7.4
 
   bytes@1.0.0: {}
 

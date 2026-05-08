@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@babel/parser": "^7.29.2",
-    "@ember/app-blueprint": "^6.10.0",
+    "@ember/app-blueprint": "^6.12.3",
     "@embroider/shared-internals": "^3.0.1",
     "babel-remove-types": "^1.0.1",
     "commander": "^13.1.0",
