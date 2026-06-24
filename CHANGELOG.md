@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-06-24)
+
+* ember-vite-codemod 1.9.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#161](https://github.com/mainmatter/ember-vite-codemod/pull/161) Update transforms to pass availableModules in index-html for ember-exam when present & add CLI option ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 1
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
 ## Release (2026-05-08)
 
 * ember-vite-codemod 1.8.0 (minor)

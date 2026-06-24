@@ -2,8 +2,8 @@
   "solution": {
     "ember-vite-codemod": {
       "impact": "minor",
-      "oldVersion": "1.7.0",
-      "newVersion": "1.8.0",
+      "oldVersion": "1.8.0",
+      "newVersion": "1.9.0",
       "tagName": "latest",
       "constraints": [
         {
@@ -14,5 +14,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-05-08)\n\n* ember-vite-codemod 1.8.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#159](https://github.com/mainmatter/ember-vite-codemod/pull/159) update @ember/app-blueprint ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2026-06-24)\n\n* ember-vite-codemod 1.9.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#161](https://github.com/mainmatter/ember-vite-codemod/pull/161) Update transforms to pass availableModules in index-html for ember-exam when present & add CLI option ([@nickschot](https://github.com/nickschot))\n\n#### Committers: 1\n- Nick Schot ([@nickschot](https://github.com/nickschot))\n"
 }
