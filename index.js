@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { program, Option } from 'commander';
+import { program, Option, InvalidArgumentError } from 'commander';
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -15,6 +15,7 @@ import { checkModulePrefixMisMatch } from './lib/tasks/check-modulePrefix-mismat
 import { detectTypescript } from './lib/utils/detect-typescript.js';
 import { isExit } from './lib/utils/exit.js';
 import { run } from './lib/utils/run.js';
+import { detectEmberExam } from './lib/utils/detect-ember-exam.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(await readFile(join(__dirname, 'package.json'), 'utf8'));
@@ -48,11 +49,25 @@ program
       'indicate the app to migrate uses JavaScript (default: true when no TypeScript files are detected)',
     ).conflicts('ts'),
   )
+  .addOption(
+    new Option(
+      '--ember-exam [boolean]',
+      'indicate the app to migrate uses ember-exam (default: true when ember-exam dependency is detected)',
+    ).argParser((value) => {
+      if (value === 'true') return true;
+      if (value === 'false') return false;
+      throw new InvalidArgumentError('Expected "true" or "false".');
+    }),
+  )
   .option('--error-trace', 'print the whole error trace when available', false)
   .version(pkg.version)
   .action(async (options) => {
     options.ts ??= !options.js && detectTypescript();
     delete options.js;
+
+    if (options.emberExam === undefined) {
+      options.emberExam = await detectEmberExam();
+    }
 
     if (options.embroiderWebpack) {
       console.warn(
