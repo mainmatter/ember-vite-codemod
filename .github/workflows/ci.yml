@@ -24,7 +24,7 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
       - run: pnpm i --frozen-lockfile
       - run: pnpm run lint
@@ -37,7 +37,7 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
       - run: pnpm i --frozen-lockfile
       - run: pnpm test:lib
@@ -96,7 +96,7 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
       - run: pnpm i --frozen-lockfile
       - name: Set TEMP to D:/Temp on windows

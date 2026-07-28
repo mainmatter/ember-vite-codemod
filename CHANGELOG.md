@@ -1,5 +1,100 @@
 # Changelog
 
+## Release (2026-06-24)
+
+* ember-vite-codemod 1.9.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#161](https://github.com/mainmatter/ember-vite-codemod/pull/161) Update transforms to pass availableModules in index-html for ember-exam when present & add CLI option ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 1
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
+## Release (2026-05-08)
+
+* ember-vite-codemod 1.8.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#159](https://github.com/mainmatter/ember-vite-codemod/pull/159) update @ember/app-blueprint ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
+## Release (2026-04-24)
+
+* ember-vite-codemod 1.7.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#155](https://github.com/mainmatter/ember-vite-codemod/pull/155) fix TypeScript parsing of files using recast ([@mansona](https://github.com/mansona))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#156](https://github.com/mainmatter/ember-vite-codemod/pull/156) update node to 20.19+ in CI to fix require(esm) ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#158](https://github.com/mainmatter/ember-vite-codemod/pull/158) update release-plan ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
+## Release (2026-03-19)
+
+* ember-vite-codemod 1.6.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#153](https://github.com/mainmatter/ember-vite-codemod/pull/153) Modify test-helper transform to add support for the alternative `import start from 'ember-exam/test-support/start'` ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 1
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
+## Release (2026-03-03)
+
+* ember-vite-codemod 1.6.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#151](https://github.com/mainmatter/ember-vite-codemod/pull/151) automatically add @embroider/legacy-inspector-support to app.js ([@mansona](https://github.com/mansona))
+  * [#150](https://github.com/mainmatter/ember-vite-codemod/pull/150) Add support for transforming test-helper with basic ember-exam setup present ([@nickschot](https://github.com/nickschot))
+  * [#149](https://github.com/mainmatter/ember-vite-codemod/pull/149) add call to setupEmberOnerrorValidation() when it is missing ([@nickschot](https://github.com/nickschot))
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#152](https://github.com/mainmatter/ember-vite-codemod/pull/152) fix running codemod multiple times ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#148](https://github.com/mainmatter/ember-vite-codemod/pull/148) pass options to transforms functions as an object ([@mansona](https://github.com/mansona))
+  * [#146](https://github.com/mainmatter/ember-vite-codemod/pull/146) add a transform test for app.js ([@mansona](https://github.com/mansona))
+  * [#147](https://github.com/mainmatter/ember-vite-codemod/pull/147) Add basic transform test for test-helper transform ([@nickschot](https://github.com/nickschot))
+  * [#144](https://github.com/mainmatter/ember-vite-codemod/pull/144) simplify ember-cli-build transform unit test ([@mansona](https://github.com/mansona))
+
+#### Committers: 2
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
+## Release (2026-02-20)
+
+* ember-vite-codemod 1.5.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-vite-codemod`
+  * [#135](https://github.com/mainmatter/ember-vite-codemod/pull/135) Update path to app blueprint's babel config (changed in 6.10) ([@fdeters](https://github.com/fdeters))
+  * [#136](https://github.com/mainmatter/ember-vite-codemod/pull/136) get versions for PACKAGES_TO_ADD from blueprint ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#143](https://github.com/mainmatter/ember-vite-codemod/pull/143) reset version ([@mansona](https://github.com/mansona))
+  * [#141](https://github.com/mainmatter/ember-vite-codemod/pull/141) update release-plan to support OIDC ([@mansona](https://github.com/mansona))
+
+#### Committers: 2
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Forrest Deters ([@fdeters](https://github.com/fdeters))
+
 ## Release (2026-01-14)
 
 ember-vite-codemod 1.4.1 (patch)
