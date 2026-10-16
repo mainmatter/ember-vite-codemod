@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-10-16)
+
+* ember-vite-codemod 1.9.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#167](https://github.com/mainmatter/ember-vite-codemod/pull/167) Fix/ add `@babel/runtime` to the packages to add ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 1
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2026-06-24)
 
 * ember-vite-codemod 1.9.0 (minor)
