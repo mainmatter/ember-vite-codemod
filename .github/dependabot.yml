@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    groups:
+      dev-dependencies:
+        dependency-type: 'development'
+        update-types:
+          - 'minor'
+          - 'patch'
+    schedule:
+      interval: weekly
+      time: '03:00'
+      day: 'monday'
+      timezone: Europe/Paris
+    # There really should only ever be one of these since it's designed to group all patches in one
+    open-pull-requests-limit: 2
+    versioning-strategy: increase-if-necessary
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '03:00'
+      timezone: Europe/Paris
+    open-pull-requests-limit: 10
