@@ -1,18 +1,22 @@
 {
   "solution": {
     "ember-vite-codemod": {
-      "impact": "minor",
-      "oldVersion": "1.8.0",
-      "newVersion": "1.9.0",
+      "impact": "patch",
+      "oldVersion": "1.9.0",
+      "newVersion": "1.9.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-06-24)\n\n* ember-vite-codemod 1.9.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-vite-codemod`\n  * [#161](https://github.com/mainmatter/ember-vite-codemod/pull/161) Update transforms to pass availableModules in index-html for ember-exam when present & add CLI option ([@nickschot](https://github.com/nickschot))\n\n#### Committers: 1\n- Nick Schot ([@nickschot](https://github.com/nickschot))\n"
+  "description": "## Release (2026-10-21)\n\n* ember-vite-codemod 1.9.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-vite-codemod`\n  * [#170](https://github.com/mainmatter/ember-vite-codemod/pull/170) fix(transform-files): use resolution to detect ember-source version ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n  * [#167](https://github.com/mainmatter/ember-vite-codemod/pull/167) Fix/ add `@babel/runtime` to the packages to add ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n\n#### :house: Internal\n* `ember-vite-codemod`\n  * [#169](https://github.com/mainmatter/ember-vite-codemod/pull/169) run pnpm create perfect-dependabot-setup@latest ([@mansona](https://github.com/mansona))\n\n#### Committers: 2\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))\n"
 }

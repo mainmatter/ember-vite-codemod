@@ -1,5 +1,22 @@
 # Changelog
 
+## Release (2026-10-21)
+
+* ember-vite-codemod 1.9.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-vite-codemod`
+  * [#170](https://github.com/mainmatter/ember-vite-codemod/pull/170) fix(transform-files): use resolution to detect ember-source version ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#167](https://github.com/mainmatter/ember-vite-codemod/pull/167) Fix/ add `@babel/runtime` to the packages to add ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :house: Internal
+* `ember-vite-codemod`
+  * [#169](https://github.com/mainmatter/ember-vite-codemod/pull/169) run pnpm create perfect-dependabot-setup@latest ([@mansona](https://github.com/mansona))
+
+#### Committers: 2
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## Release (2026-06-24)
 
 * ember-vite-codemod 1.9.0 (minor)
